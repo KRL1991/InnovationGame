@@ -8,6 +8,7 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -95,24 +96,37 @@
                         <Image url="@../Logo/businessMan.png" />
                      </image>
                   </ImageView>
-                  <TextField alignment="CENTER" editable="false" layoutX="956.0" layoutY="240.0" text="Bob" />
-                  <TextField alignment="CENTER" editable="false" layoutX="956.0" layoutY="280.0" text="X amount of money" />
+                  <TextField fx:id="TextFieldName" alignment="CENTER" editable="false" layoutX="956.0" layoutY="240.0" text="Bob" />
+                  <TextField fx:id="TextFieldCurrentAmountMoney" alignment="CENTER" editable="false" layoutX="956.0" layoutY="280.0" text="X amount of money" />
                   <Label layoutX="446.0" layoutY="39.0" text="Investor Office" textFill="#fcfcfc">
                      <font>
                         <Font size="48.0" />
                      </font>
                   </Label>
-                  <TextField editable="false" layoutX="44.0" layoutY="59.0" text="Day: X" />
-                  <Button layoutX="510.0" layoutY="609.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="End Day" />
-                  <Button layoutX="44.0" layoutY="150.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Invest In New Property" />
-                  <Button layoutX="44.0" layoutY="212.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="View Owned Properties " />
-                  <Button layoutX="44.0" layoutY="265.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="The Bank" />
-                  <Button layoutX="44.0" layoutY="373.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Leaderboard" />
-                  <Button layoutX="44.0" layoutY="317.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Property Market" />
-                  <TextField alignment="CENTER" layoutX="388.0" layoutY="265.0" text=" - 3" />
-                  <TextField alignment="CENTER" layoutX="614.0" layoutY="265.0" text="+5" />
-                  <Label layoutX="400.0" layoutY="217.0" text="Home Properties Market" textFill="WHITE" />
-                  <Label layoutX="627.0" layoutY="217.0" text="Office Properties Market" textFill="WHITE" />
+                  <TextField fx:id="TextFieldDayCounter" editable="false" layoutX="44.0" layoutY="59.0" text="Day: X" />
+                  <Button fx:id="ButtonEndDay" layoutX="508.0" layoutY="609.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="End Day" />
+                  <Button fx:id="ButtonInvestInNewProperty" layoutX="44.0" layoutY="150.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Invest In New Property" />
+                  <Button fx:id="ButtonViewOwnedProperties" layoutX="44.0" layoutY="212.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="View Owned Properties " />
+                  <Button fx:id="ButtonBank" layoutX="44.0" layoutY="265.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="The Bank" />
+                  <Button fx:id="ButtonLeaderboard" layoutX="44.0" layoutY="373.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Leaderboard" />
+                  <Button fx:id="ButtonPropertyMarket" layoutX="44.0" layoutY="317.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Property Market" />
+                  <TextField fx:id="TextFieldHomePropertiesMarket" alignment="CENTER" layoutX="388.0" layoutY="265.0" text=" - 3" />
+                  <TextField fx:id="TextFieldOfficePropertiesMarket" alignment="CENTER" layoutX="614.0" layoutY="265.0" text="+5" />
+                  <Label layoutX="377.0" layoutY="215.0" text="Home Properties Market" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label layoutX="601.0" layoutY="216.0" text="Office Properties Market" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <TextField fx:id="TextFieldCurrentAmountDebt" alignment="CENTER" editable="false" layoutX="956.0" layoutY="319.0" text="X amount of debt" />
+                  <TextArea fx:id="TextAreaEventLog" layoutX="819.0" layoutY="441.0" prefHeight="200.0" prefWidth="300.0" />
+                  <Label layoutX="928.0" layoutY="407.0" text="EventLog" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
         </content>
@@ -121,7 +135,7 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
-                  <Button layoutX="995.0" layoutY="686.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Back" />
+                  <Button fx:id="ButtonNewProperties" layoutX="995.0" layoutY="686.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Back" />
                   <ImageView fitHeight="200.0" fitWidth="300.0" layoutX="70.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Logo/realestate-logo-portfolio-1.jpg" />
@@ -137,9 +151,9 @@
                         <Image url="@../Logo/realestate-logo-portfolio-1.jpg" />
                      </image>
                   </ImageView>
-                  <Button layoutX="198.0" layoutY="365.0" mnemonicParsing="false" text="Buy" />
-                  <Button layoutX="578.0" layoutY="564.0" mnemonicParsing="false" text="Buy" />
-                  <Button layoutX="931.0" layoutY="365.0" mnemonicParsing="false" text="Buy" />
+                  <Button fx:id="ButtonBuyLeft" layoutX="198.0" layoutY="365.0" mnemonicParsing="false" text="Buy" />
+                  <Button fx:id="ButtonBuyMiddle" layoutX="578.0" layoutY="564.0" mnemonicParsing="false" text="Buy" />
+                  <Button fx:id="ButtonBuyRight" layoutX="931.0" layoutY="365.0" mnemonicParsing="false" text="Buy" />
                   <TextField alignment="CENTER" layoutX="127.0" layoutY="321.0" text="\$" />
                   <TextField alignment="CENTER" layoutX="507.0" layoutY="524.0" text="\$" />
                   <TextField alignment="CENTER" layoutX="860.0" layoutY="321.0" text="\$" />
@@ -155,16 +169,16 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
-                  <ListView layoutX="37.0" layoutY="131.0" prefHeight="500.0" prefWidth="350.0" />
+                  <ListView fx:id="ListViewOwnedProperties" layoutX="37.0" layoutY="131.0" prefHeight="500.0" prefWidth="350.0" />
                   <Label layoutX="410.0" layoutY="39.0" text="Owned Properties" textFill="WHITE">
                      <font>
                         <Font size="48.0" />
                      </font>
                   </Label>
-                  <Button layoutX="960.0" layoutY="286.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Sell" />
-                  <Button layoutX="960.0" layoutY="226.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Renovate" />
-                  <Button layoutX="960.0" layoutY="685.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Back" />
-                  <Button layoutX="960.0" layoutY="164.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Convert " />
+                  <Button fx:id="ButtonSell" layoutX="960.0" layoutY="286.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Sell" />
+                  <Button fx:id="ButtonRenovate" layoutX="960.0" layoutY="226.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Renovate" />
+                  <Button fx:id="ButtonOwnedPropertiesBack" layoutX="960.0" layoutY="685.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Back" />
+                  <Button fx:id="ButtonConvert" layoutX="960.0" layoutY="164.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Convert " />
                </children></AnchorPane>
         </content>
       </Tab>
@@ -183,7 +197,7 @@
                   <Button fx:id="ButtonLoan1" layoutX="574.0" layoutY="243.0" mnemonicParsing="false" text="Loan" />
                   <Button fx:id="ButtonLoan2" layoutX="581.0" layoutY="428.0" mnemonicParsing="false" text="Loan" />
                   <Button fx:id="ButtonLoan3" layoutX="575.0" layoutY="612.0" mnemonicParsing="false" text="Loan" />
-                  <Button fx:id="ButtonBack" layoutX="1089.0" layoutY="693.0" mnemonicParsing="false" text="Back" />
+                  <Button fx:id="ButtonBankBack" layoutX="1089.0" layoutY="693.0" mnemonicParsing="false" text="Back" />
                   <Label layoutX="583.0" layoutY="147.0" text="Loan 1" textFill="WHITE" />
                   <Label layoutX="582.0" layoutY="342.0" text="Loan 2" textFill="WHITE" />
                   <Label layoutX="583.0" layoutY="525.0" text="Loan 3" textFill="WHITE" />
@@ -194,7 +208,7 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
-                  <LineChart layoutX="100.0" layoutY="160.0" title="Home Property Market">
+                  <LineChart fx:id="LineChartHome" layoutX="100.0" layoutY="160.0" title="Home Property Market">
                     <xAxis>
                       <CategoryAxis side="BOTTOM" />
                     </xAxis>
@@ -202,7 +216,7 @@
                       <NumberAxis side="LEFT" />
                     </yAxis>
                   </LineChart>
-                  <LineChart layoutX="652.0" layoutY="160.0" title="Office Property Market">
+                  <LineChart fx:id="LineChartOffice" layoutX="652.0" layoutY="160.0" title="Office Property Market">
                      <xAxis>
                         <CategoryAxis side="BOTTOM" />
                      </xAxis>
@@ -210,6 +224,7 @@
                         <NumberAxis side="LEFT" />
                      </yAxis>
                   </LineChart>
+                  <Button fx:id="ButtonPropertyMarketBack" layoutX="1073.0" layoutY="697.0" mnemonicParsing="false" text="Back" />
                </children></AnchorPane>
         </content>
       </Tab>
