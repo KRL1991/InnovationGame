@@ -28,7 +28,7 @@
                   </Label>
                   <Button fx:id="welcomeScreenStartButton" layoutX="557.0" layoutY="391.0" mnemonicParsing="false" onAction="#GoToDifficultyScreen" prefHeight="54.0" prefWidth="118.0" text="Start Game" />
                   <Button fx:id="welcomeScreenLoadButton" layoutX="558.0" layoutY="470.0" mnemonicParsing="false" onAction="#LoadExistingData" prefHeight="54.0" prefWidth="118.0" text="Load Game" />
-                  <ImageView fitHeight="280.0" fitWidth="416.0" layoutX="408.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="ImageViewWelcomeScreenLogo" fitHeight="280.0" fitWidth="416.0" layoutX="408.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Logo/realestate-logo-portfolio-1.jpg" />
                      </image>
@@ -63,15 +63,15 @@
                         <Font name="Consolas" size="48.0" />
                      </font>
                   </Label>
-                  <TextField alignment="CENTER" layoutX="501.0" layoutY="164.0" prefHeight="35.0" prefWidth="199.0" promptText="Enter Name..." />
-                  <TextField alignment="CENTER" layoutX="501.0" layoutY="254.0" prefHeight="35.0" prefWidth="199.0" promptText=" Enter Age..." />
+                  <TextField fx:id="TextFieldCreateName" alignment="CENTER" layoutX="501.0" layoutY="164.0" prefHeight="35.0" prefWidth="199.0" promptText="Enter Name..." />
+                  <TextField fx:id="TextFieldEnterAge" alignment="CENTER" layoutX="501.0" layoutY="254.0" prefHeight="35.0" prefWidth="199.0" promptText=" Enter Age..." />
                   <Label layoutX="524.0" layoutY="313.0" text="Choose Gender:" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Button layoutX="375.0" layoutY="350.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Male" />
-                  <Button layoutX="651.0" layoutY="350.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Female" />
+                  <Button fx:id="ButtonMale" layoutX="375.0" layoutY="350.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Male" />
+                  <Button fx:id="ButtonFemale" layoutX="651.0" layoutY="350.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Female" />
                   <ImageView fitHeight="80.0" fitWidth="100.0" layoutX="434.0" layoutY="397.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Logo/Male.png" />
@@ -82,7 +82,7 @@
                         <Image url="@../Logo/Female.jpg" />
                      </image>
                   </ImageView>
-                  <Button layoutX="511.0" layoutY="522.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Start Investing" />
+                  <Button fx:id="ButtonStartInvesting" layoutX="511.0" layoutY="522.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Start Investing" />
                </children>
             </AnchorPane>
         </content>
@@ -136,17 +136,17 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
                   <Button fx:id="ButtonNewProperties" layoutX="995.0" layoutY="686.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Back" />
-                  <ImageView fitHeight="200.0" fitWidth="300.0" layoutX="70.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="ImageViewNewPropertiesLeft" fitHeight="200.0" fitWidth="300.0" layoutX="70.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Logo/realestate-logo-portfolio-1.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="200.0" fitWidth="300.0" layoutX="450.0" layoutY="321.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="ImageViewNewPropertiesMiddle" fitHeight="200.0" fitWidth="300.0" layoutX="450.0" layoutY="321.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Logo/realestate-logo-portfolio-1.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="200.0" fitWidth="300.0" layoutX="785.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="ImageViewNewPropertiesRight" fitHeight="200.0" fitWidth="300.0" layoutX="785.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Logo/realestate-logo-portfolio-1.jpg" />
                      </image>
