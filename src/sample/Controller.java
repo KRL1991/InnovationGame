@@ -7,6 +7,9 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 
 public class Controller {
+
+    String currentAmount;
+
     @FXML
     private TabPane tabPane;
 
@@ -143,6 +146,9 @@ public class Controller {
     @FXML
     private TextField TextFieldLoan3;
 
+    @FXML
+    private TextField TextFieldAge;
+
     // TextArea -------------------------------------------------------------
     @FXML
     private TextArea TextAreaEventLog;
@@ -211,6 +217,13 @@ public class Controller {
    @FXML
    void CreateInvestorChooseGender(ActionEvent event) {
 
+       String name = TextFieldCreateName.getText();
+
+       TextFieldName.clear();
+       TextFieldName.setText(name);
+
+
+
    }
 
    @FXML
@@ -218,24 +231,38 @@ public class Controller {
       tabPane.getSelectionModel().select(TabBank);
 
    }
+// Difficulty Screen ----------------------------------------------------------
 
    @FXML
    void GoToCreateInvestorEasy(ActionEvent event) {
       tabPane.getSelectionModel().select(TabCreateInvestor);
-      //TODO tilføj 100.000 til currentAmount
+
+       TextFieldCurrentAmountMoney.clear();
+       TextFieldCurrentAmountMoney.appendText("100.000 $");
+
+       Integer currentAmountEasy = Integer.valueOf(currentAmount);
+
 
    }
 
    @FXML
    void GoToCreateInvestorHard(ActionEvent event) {
       tabPane.getSelectionModel().select(TabCreateInvestor);
-      //TODO tilføj 50.000 til currentAmount
+
+       TextFieldCurrentAmountMoney.clear();
+       TextFieldCurrentAmountMoney.appendText("50.000 $");
+       int currentAmountIntHard = Integer.parseInt(currentAmount);
+       currentAmount = String.valueOf(currentAmountIntHard);
    }
 
    @FXML
    void GoToCreateInvestorMedium(ActionEvent event) {
       tabPane.getSelectionModel().select(TabCreateInvestor);
-      //TODO tilføj 75.000 til currentAmount
+
+       TextFieldCurrentAmountMoney.clear();
+       TextFieldCurrentAmountMoney.appendText("75.000 $");
+       int currentAmountIntMedium = Integer.parseInt(currentAmount);
+       currentAmount = String.valueOf(currentAmountIntMedium);
    }
 
    @FXML
@@ -243,6 +270,7 @@ public class Controller {
       tabPane.getSelectionModel().select(TabDifficultyScreen);
 
    }
+// .....
 
    @FXML
    void GoToInvestInNewProperty(ActionEvent event) {
@@ -258,6 +286,15 @@ public class Controller {
    @FXML
    void GoToMainScreen(ActionEvent event) {
       tabPane.getSelectionModel().select(TabMainScreen);
+
+       String name = TextFieldCreateName.getText();
+       String age = TextFieldEnterAge.getText();
+
+       TextFieldName.clear();
+       TextFieldName.setText(name);
+
+       TextFieldAge.clear();
+       TextFieldAge.setText(age);
 
    }
 

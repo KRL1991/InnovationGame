@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@HideTabs.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
   <tabs>
     <Tab fx:id="TabWelcomeScreen" text="Welcome Screen">
       <content>
@@ -97,7 +97,7 @@
                      </image>
                   </ImageView>
                   <TextField fx:id="TextFieldName" alignment="CENTER" editable="false" layoutX="956.0" layoutY="240.0" text="Bob" />
-                  <TextField fx:id="TextFieldCurrentAmountMoney" alignment="CENTER" editable="false" layoutX="956.0" layoutY="280.0" text="X amount of money" />
+                  <TextField fx:id="TextFieldCurrentAmountMoney" alignment="CENTER" editable="false" layoutX="956.0" layoutY="333.0" text="X amount of money" />
                   <Label layoutX="446.0" layoutY="39.0" text="Investor Office" textFill="#fcfcfc">
                      <font>
                         <Font size="48.0" />
@@ -120,13 +120,14 @@
                      <font>
                         <Font size="18.0" />
                      </font></Label>
-                  <TextField fx:id="TextFieldCurrentAmountDebt" alignment="CENTER" editable="false" layoutX="956.0" layoutY="319.0" text="X amount of debt" />
+                  <TextField fx:id="TextFieldCurrentAmountDebt" alignment="CENTER" editable="false" layoutX="956.0" layoutY="373.0" text="X amount of debt" />
                   <TextArea fx:id="TextAreaEventLog" layoutX="819.0" layoutY="441.0" prefHeight="200.0" prefWidth="300.0" />
                   <Label layoutX="928.0" layoutY="407.0" text="EventLog" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
+                  <TextField fx:id="TextFieldAge" alignment="CENTER" editable="false" layoutX="956.0" layoutY="281.0" text="Age" />
                </children>
             </AnchorPane>
         </content>
