@@ -1,10 +1,15 @@
 package sample;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.chart.LineChart;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+
+import javax.imageio.stream.ImageInputStream;
+import java.io.InputStream;
 
 public class Controller {
 
@@ -109,6 +114,9 @@ public class Controller {
 
     @FXML
     private ImageView ImageViewNewPropertiesRight;
+
+    @FXML
+    private ImageView ImageviewInvesterOfficeAvatar;
 
     // Textfields -------------------------------------------------------------
 
@@ -222,6 +230,15 @@ public class Controller {
        TextFieldName.clear();
        TextFieldName.setText(name);
 
+       /*InputStream inputStream = getClass().getResourceAsStream("Logo/businessMan.png");
+       Image male = new Image(inputStream);
+       ImageView image = new ImageView(male);
+
+       ImageviewInvesterOfficeAvatar.setImage(male);
+       */
+
+
+
 
 
    }
@@ -240,9 +257,6 @@ public class Controller {
        TextFieldCurrentAmountMoney.clear();
        TextFieldCurrentAmountMoney.appendText("100.000 $");
 
-       Integer currentAmountEasy = Integer.valueOf(currentAmount);
-
-
    }
 
    @FXML
@@ -251,8 +265,7 @@ public class Controller {
 
        TextFieldCurrentAmountMoney.clear();
        TextFieldCurrentAmountMoney.appendText("50.000 $");
-       int currentAmountIntHard = Integer.parseInt(currentAmount);
-       currentAmount = String.valueOf(currentAmountIntHard);
+
    }
 
    @FXML
@@ -261,8 +274,7 @@ public class Controller {
 
        TextFieldCurrentAmountMoney.clear();
        TextFieldCurrentAmountMoney.appendText("75.000 $");
-       int currentAmountIntMedium = Integer.parseInt(currentAmount);
-       currentAmount = String.valueOf(currentAmountIntMedium);
+
    }
 
    @FXML
