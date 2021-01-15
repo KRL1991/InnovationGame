@@ -10,15 +10,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
 public class Controller {
-
+ // Buttons -------------------------------------------------------------
     @FXML
     private Button welcomeScreenStartButton;
 
     @FXML
     private Button welcomeScreenLoadButton;
-
-    @FXML
-    private ImageView ImageViewWelcomeScreenLogo;
 
     @FXML
     private Button DifficultyScreenEasyButton;
@@ -30,12 +27,6 @@ public class Controller {
     private Button DifficultyScreenHardButton;
 
     @FXML
-    private TextField TextFieldCreateName;
-
-    @FXML
-    private TextField TextFieldEnterAge;
-
-    @FXML
     private Button ButtonMale;
 
     @FXML
@@ -43,16 +34,6 @@ public class Controller {
 
     @FXML
     private Button ButtonStartInvesting;
-
-    @FXML
-    private TextField TextFieldName;
-
-    @FXML
-    private TextField TextFieldCurrentAmountMoney;
-
-    @FXML
-    private TextField TextFieldDayCounter;
-
     @FXML
     private Button ButtonEndDay;
 
@@ -72,30 +53,6 @@ public class Controller {
     private Button ButtonPropertyMarket;
 
     @FXML
-    private TextField TextFieldHomePropertiesMarket;
-
-    @FXML
-    private TextField TextFieldOfficePropertiesMarket;
-
-    @FXML
-    private TextField TextFieldCurrentAmountDebt;
-
-    @FXML
-    private TextArea TextAreaEventLog;
-
-    @FXML
-    private Button ButtonNewProperties;
-
-    @FXML
-    private ImageView ImageViewNewPropertiesLeft;
-
-    @FXML
-    private ImageView ImageViewNewPropertiesMiddle;
-
-    @FXML
-    private ImageView ImageViewNewPropertiesRight;
-
-    @FXML
     private Button ButtonBuyLeft;
 
     @FXML
@@ -103,9 +60,6 @@ public class Controller {
 
     @FXML
     private Button ButtonBuyRight;
-
-    @FXML
-    private ListView<?> ListViewOwnedProperties;
 
     @FXML
     private Button ButtonSell;
@@ -120,13 +74,7 @@ public class Controller {
     private Button ButtonConvert;
 
     @FXML
-    private TextField TextFieldLoan1;
-
-    @FXML
-    private TextField TextFieldLoan2;
-
-    @FXML
-    private TextField TextFieldLoan3;
+    private Button ButtonNewProperties;
 
     @FXML
     private Button ButtonLoan1;
@@ -141,20 +89,81 @@ public class Controller {
     private Button ButtonBankBack;
 
     @FXML
+    private Button ButtonPropertyMarketBack;
+
+    @FXML
+    private Button ButtonLeaderboadBack;
+
+    // Imageviews -------------------------------------------------------------
+    @FXML
+    private ImageView ImageViewWelcomeScreenLogo;
+
+    @FXML
+    private ImageView ImageViewNewPropertiesLeft;
+
+    @FXML
+    private ImageView ImageViewNewPropertiesMiddle;
+
+    @FXML
+    private ImageView ImageViewNewPropertiesRight;
+
+    // Textfields -------------------------------------------------------------
+
+    @FXML
+    private TextField TextFieldCreateName;
+
+    @FXML
+    private TextField TextFieldEnterAge;
+
+
+    @FXML
+    private TextField TextFieldName;
+
+    @FXML
+    private TextField TextFieldCurrentAmountMoney;
+
+    @FXML
+    private TextField TextFieldDayCounter;
+
+    @FXML
+    private TextField TextFieldHomePropertiesMarket;
+
+    @FXML
+    private TextField TextFieldOfficePropertiesMarket;
+
+    @FXML
+    private TextField TextFieldCurrentAmountDebt;
+
+    @FXML
+    private TextField TextFieldLoan1;
+
+    @FXML
+    private TextField TextFieldLoan2;
+
+    @FXML
+    private TextField TextFieldLoan3;
+
+    // TextArea -------------------------------------------------------------
+    @FXML
+    private TextArea TextAreaEventLog;
+
+   // Misc -------------------------------------------------------------
+
+    @FXML
+    private ListView<?> ListViewOwnedProperties;
+
+    @FXML
     private LineChart<?, ?> LineChartHome;
 
     @FXML
     private LineChart<?, ?> LineChartOffice;
 
     @FXML
-    private Button ButtonPropertyMarketBack;
-
-    @FXML
     private ListView<?> ListViewLeaderboard;
 
-    @FXML
-    private Button ButtonLeaderboadBack;
 
+
+// Methods
     @FXML
     void GoToCreateInvestor(ActionEvent event) {
 
