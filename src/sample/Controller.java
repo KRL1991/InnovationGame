@@ -188,24 +188,104 @@ public class Controller {
    @FXML
    private Tab TabLeaderboard;
 
+   @FXML
+   private Tab TabNewProperties;
+
 
 // Methods
-    @FXML
-    void GoToCreateInvestor(ActionEvent event) {
 
+   @FXML
+   void BankLoan(ActionEvent event) {
 
+   }
 
-    }
+   @FXML
+   void BuyProperties(ActionEvent event) {
 
-    @FXML
-    void GoToDifficultyScreen(ActionEvent event) {
-       tabPane.getSelectionModel();
+   }
 
-    }
+   @FXML
+   void ConvertBuilding(ActionEvent event) {
 
-    @FXML
-    void LoadExistingData(ActionEvent event) {
+   }
 
-    }
+   @FXML
+   void CreateInvestorChooseGender(ActionEvent event) {
+
+   }
+
+   @FXML
+   void GoToBank(ActionEvent event) {
+      tabPane.getSelectionModel().select(TabBank);
+
+   }
+
+   @FXML
+   void GoToCreateInvestorEasy(ActionEvent event) {
+      tabPane.getSelectionModel().select(TabCreateInvestor);
+      //TODO tilføj 100.000 til currentAmount
+
+   }
+
+   @FXML
+   void GoToCreateInvestorHard(ActionEvent event) {
+      tabPane.getSelectionModel().select(TabCreateInvestor);
+      //TODO tilføj 50.000 til currentAmount
+   }
+
+   @FXML
+   void GoToCreateInvestorMedium(ActionEvent event) {
+      tabPane.getSelectionModel().select(TabCreateInvestor);
+      //TODO tilføj 75.000 til currentAmount
+   }
+
+   @FXML
+   void GoToDifficultyScreen(ActionEvent event) {
+      tabPane.getSelectionModel().select(TabDifficultyScreen);
+
+   }
+
+   @FXML
+   void GoToInvestInNewProperty(ActionEvent event) {
+      tabPane.getSelectionModel().select(TabNewProperties);
+   }
+
+   @FXML
+   void GoToLeaderboard(ActionEvent event) {
+      tabPane.getSelectionModel().select(TabLeaderboard);
+
+   }
+
+   @FXML
+   void GoToMainScreen(ActionEvent event) {
+      tabPane.getSelectionModel().select(TabMainScreen);
+
+   }
+
+   @FXML
+   void GoToPropertyMarket(ActionEvent event) {
+      tabPane.getSelectionModel().select(TabPropertyMarket);
+
+   }
+
+   @FXML
+   void GoToViewOwnedProperties(ActionEvent event) {
+      tabPane.getSelectionModel().select(TabOwnedProperties);
+   }
+
+   @FXML
+   void LoadExistingData(ActionEvent event) {
+
+   }
+
+   @FXML
+   void RenovateBuilding(ActionEvent event) {
+
+   }
+
+   @FXML
+   void SellProperty(ActionEvent event) {
+
+   }
 
 }

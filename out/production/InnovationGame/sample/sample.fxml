@@ -17,7 +17,7 @@
 
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
   <tabs>
-    <Tab text="Welcome Screen">
+    <Tab fx:id="TabWelcomeScreen" text="Welcome Screen">
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
@@ -28,7 +28,7 @@
                   </Label>
                   <Button fx:id="welcomeScreenStartButton" layoutX="557.0" layoutY="391.0" mnemonicParsing="false" onAction="#GoToDifficultyScreen" prefHeight="54.0" prefWidth="118.0" text="Start Game" />
                   <Button fx:id="welcomeScreenLoadButton" layoutX="558.0" layoutY="470.0" mnemonicParsing="false" onAction="#LoadExistingData" prefHeight="54.0" prefWidth="118.0" text="Load Game" />
-                  <ImageView fitHeight="280.0" fitWidth="416.0" layoutX="408.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="ImageViewWelcomeScreenLogo" fitHeight="280.0" fitWidth="416.0" layoutX="408.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Logo/realestate-logo-portfolio-1.jpg" />
                      </image>
@@ -36,13 +36,13 @@
                </children></AnchorPane>
       </content>
     </Tab>
-    <Tab text="Difficulty Screen">
+    <Tab fx:id="TabDifficultyScreen" text="Difficulty Screen">
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
-                  <Button fx:id="DifficultyScreenEasyButton" layoutX="550.0" layoutY="155.0" mnemonicParsing="false" onAction="#GoToCreateInvestor" prefHeight="30.0" prefWidth="100.0" text="Easy" />
-                  <Button fx:id="DifficultyScreenMediumButton" layoutX="550.0" layoutY="230.0" mnemonicParsing="false" onAction="#GoToCreateInvestor" prefHeight="30.0" prefWidth="100.0" text="Medium" />
-                  <Button fx:id="DifficultyScreenHardButton" layoutX="550.0" layoutY="298.0" mnemonicParsing="false" onAction="#GoToCreateInvestor" prefHeight="30.0" prefWidth="100.0" text="Hard" />
+                  <Button fx:id="DifficultyScreenEasyButton" layoutX="550.0" layoutY="155.0" mnemonicParsing="false" onAction="#GoToCreateInvestorEasy" prefHeight="30.0" prefWidth="100.0" text="Easy" />
+                  <Button fx:id="DifficultyScreenMediumButton" layoutX="550.0" layoutY="230.0" mnemonicParsing="false" onAction="#GoToCreateInvestorMedium" prefHeight="30.0" prefWidth="100.0" text="Medium" />
+                  <Button fx:id="DifficultyScreenHardButton" layoutX="550.0" layoutY="298.0" mnemonicParsing="false" onAction="#GoToCreateInvestorHard" prefHeight="30.0" prefWidth="100.0" text="Hard" />
                   <Label layoutX="526.0" layoutY="195.0" text="Start Capital: 100.000 $" textFill="#f8f8f8" />
                   <Label layoutX="530.0" layoutY="270.0" text="Start Capital: 75.000 $" textFill="#f2eded" />
                   <Label layoutX="530.0" layoutY="339.0" text="Start Capital 50.000 $" textFill="WHITE" />
@@ -54,7 +54,7 @@
                </children></AnchorPane>
       </content>
     </Tab>
-      <Tab text="Create Investor">
+      <Tab fx:id="TabCreateInvestor" text="Create Investor">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
@@ -63,15 +63,15 @@
                         <Font name="Consolas" size="48.0" />
                      </font>
                   </Label>
-                  <TextField alignment="CENTER" layoutX="501.0" layoutY="164.0" prefHeight="35.0" prefWidth="199.0" promptText="Enter Name..." />
-                  <TextField alignment="CENTER" layoutX="501.0" layoutY="254.0" prefHeight="35.0" prefWidth="199.0" promptText=" Enter Age..." />
+                  <TextField fx:id="TextFieldCreateName" alignment="CENTER" layoutX="501.0" layoutY="164.0" prefHeight="35.0" prefWidth="199.0" promptText="Enter Name..." />
+                  <TextField fx:id="TextFieldEnterAge" alignment="CENTER" layoutX="501.0" layoutY="254.0" prefHeight="35.0" prefWidth="199.0" promptText=" Enter Age..." />
                   <Label layoutX="524.0" layoutY="313.0" text="Choose Gender:" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Button layoutX="375.0" layoutY="350.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Male" />
-                  <Button layoutX="651.0" layoutY="350.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Female" />
+                  <Button fx:id="ButtonMale" layoutX="375.0" layoutY="350.0" mnemonicParsing="false" onAction="#CreateInvestorChooseGender" prefHeight="30.0" prefWidth="180.0" text="Male" />
+                  <Button fx:id="ButtonFemale" layoutX="651.0" layoutY="350.0" mnemonicParsing="false" onAction="#CreateInvestorChooseGender" prefHeight="30.0" prefWidth="180.0" text="Female" />
                   <ImageView fitHeight="80.0" fitWidth="100.0" layoutX="434.0" layoutY="397.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Logo/Male.png" />
@@ -82,12 +82,12 @@
                         <Image url="@../Logo/Female.jpg" />
                      </image>
                   </ImageView>
-                  <Button layoutX="511.0" layoutY="522.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Start Investing" />
+                  <Button fx:id="ButtonStartInvesting" layoutX="511.0" layoutY="522.0" mnemonicParsing="false" onAction="#GoToMainScreen" prefHeight="30.0" prefWidth="180.0" text="Start Investing" />
                </children>
             </AnchorPane>
         </content>
       </Tab>
-      <Tab text="Main Screen">
+      <Tab fx:id="TabMainScreen" text="Main Screen">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
@@ -105,11 +105,11 @@
                   </Label>
                   <TextField fx:id="TextFieldDayCounter" editable="false" layoutX="44.0" layoutY="59.0" text="Day: X" />
                   <Button fx:id="ButtonEndDay" layoutX="508.0" layoutY="609.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="End Day" />
-                  <Button fx:id="ButtonInvestInNewProperty" layoutX="44.0" layoutY="150.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Invest In New Property" />
-                  <Button fx:id="ButtonViewOwnedProperties" layoutX="44.0" layoutY="212.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="View Owned Properties " />
-                  <Button fx:id="ButtonBank" layoutX="44.0" layoutY="265.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="The Bank" />
-                  <Button fx:id="ButtonLeaderboard" layoutX="44.0" layoutY="373.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Leaderboard" />
-                  <Button fx:id="ButtonPropertyMarket" layoutX="44.0" layoutY="317.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Property Market" />
+                  <Button fx:id="ButtonInvestInNewProperty" layoutX="44.0" layoutY="150.0" mnemonicParsing="false" onAction="#GoToInvestInNewProperty" prefHeight="30.0" prefWidth="180.0" text="Invest In New Property" />
+                  <Button fx:id="ButtonViewOwnedProperties" layoutX="44.0" layoutY="212.0" mnemonicParsing="false" onAction="#GoToViewOwnedProperties" prefHeight="30.0" prefWidth="180.0" text="View Owned Properties " />
+                  <Button fx:id="ButtonBank" layoutX="44.0" layoutY="265.0" mnemonicParsing="false" onAction="#GoToBank" prefHeight="30.0" prefWidth="180.0" text="The Bank" />
+                  <Button fx:id="ButtonLeaderboard" layoutX="44.0" layoutY="373.0" mnemonicParsing="false" onAction="#GoToLeaderboard" prefHeight="30.0" prefWidth="180.0" text="Leaderboard" />
+                  <Button fx:id="ButtonPropertyMarket" layoutX="44.0" layoutY="317.0" mnemonicParsing="false" onAction="#GoToPropertyMarket" prefHeight="30.0" prefWidth="180.0" text="Property Market" />
                   <TextField fx:id="TextFieldHomePropertiesMarket" alignment="CENTER" layoutX="388.0" layoutY="265.0" text=" - 3" />
                   <TextField fx:id="TextFieldOfficePropertiesMarket" alignment="CENTER" layoutX="614.0" layoutY="265.0" text="+5" />
                   <Label layoutX="377.0" layoutY="215.0" text="Home Properties Market" textFill="WHITE">
@@ -131,29 +131,29 @@
             </AnchorPane>
         </content>
       </Tab>
-      <Tab text="New Properties">
+      <Tab fx:id="TabNewProperties" text="New Properties">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
-                  <Button fx:id="ButtonNewProperties" layoutX="995.0" layoutY="686.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Back" />
-                  <ImageView fitHeight="200.0" fitWidth="300.0" layoutX="70.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+                  <Button fx:id="ButtonNewProperties" layoutX="995.0" layoutY="686.0" mnemonicParsing="false" onAction="#GoToMainScreen" prefHeight="30.0" prefWidth="180.0" text="Back" />
+                  <ImageView fx:id="ImageViewNewPropertiesLeft" fitHeight="200.0" fitWidth="300.0" layoutX="70.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Logo/realestate-logo-portfolio-1.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="200.0" fitWidth="300.0" layoutX="450.0" layoutY="321.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="ImageViewNewPropertiesMiddle" fitHeight="200.0" fitWidth="300.0" layoutX="450.0" layoutY="321.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Logo/realestate-logo-portfolio-1.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="200.0" fitWidth="300.0" layoutX="785.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="ImageViewNewPropertiesRight" fitHeight="200.0" fitWidth="300.0" layoutX="785.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Logo/realestate-logo-portfolio-1.jpg" />
                      </image>
                   </ImageView>
-                  <Button fx:id="ButtonBuyLeft" layoutX="198.0" layoutY="365.0" mnemonicParsing="false" text="Buy" />
-                  <Button fx:id="ButtonBuyMiddle" layoutX="578.0" layoutY="564.0" mnemonicParsing="false" text="Buy" />
-                  <Button fx:id="ButtonBuyRight" layoutX="931.0" layoutY="365.0" mnemonicParsing="false" text="Buy" />
+                  <Button fx:id="ButtonBuyLeft" layoutX="198.0" layoutY="365.0" mnemonicParsing="false" onAction="#BuyProperties" text="Buy" />
+                  <Button fx:id="ButtonBuyMiddle" layoutX="578.0" layoutY="564.0" mnemonicParsing="false" onAction="#BuyProperties" text="Buy" />
+                  <Button fx:id="ButtonBuyRight" layoutX="931.0" layoutY="365.0" mnemonicParsing="false" onAction="#BuyProperties" text="Buy" />
                   <TextField alignment="CENTER" layoutX="127.0" layoutY="321.0" text="\$" />
                   <TextField alignment="CENTER" layoutX="507.0" layoutY="524.0" text="\$" />
                   <TextField alignment="CENTER" layoutX="860.0" layoutY="321.0" text="\$" />
@@ -165,7 +165,7 @@
                </children></AnchorPane>
         </content>
       </Tab>
-      <Tab text="Owned Properties">
+      <Tab fx:id="TabOwnedProperties" text="Owned Properties">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
@@ -175,14 +175,14 @@
                         <Font size="48.0" />
                      </font>
                   </Label>
-                  <Button fx:id="ButtonSell" layoutX="960.0" layoutY="286.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Sell" />
-                  <Button fx:id="ButtonRenovate" layoutX="960.0" layoutY="226.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Renovate" />
-                  <Button fx:id="ButtonOwnedPropertiesBack" layoutX="960.0" layoutY="685.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Back" />
-                  <Button fx:id="ButtonConvert" layoutX="960.0" layoutY="164.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Convert " />
+                  <Button fx:id="ButtonSell" layoutX="960.0" layoutY="286.0" mnemonicParsing="false" onAction="#SellProperty" prefHeight="30.0" prefWidth="180.0" text="Sell" />
+                  <Button fx:id="ButtonRenovate" layoutX="960.0" layoutY="226.0" mnemonicParsing="false" onAction="#RenovateBuilding" prefHeight="30.0" prefWidth="180.0" text="Renovate" />
+                  <Button fx:id="ButtonOwnedPropertiesBack" layoutX="960.0" layoutY="685.0" mnemonicParsing="false" onAction="#GoToMainScreen" prefHeight="30.0" prefWidth="180.0" text="Back" />
+                  <Button fx:id="ButtonConvert" layoutX="960.0" layoutY="164.0" mnemonicParsing="false" onAction="#ConvertBuilding" prefHeight="30.0" prefWidth="180.0" text="Convert " />
                </children></AnchorPane>
         </content>
       </Tab>
-      <Tab text="The Bank">
+      <Tab fx:id="TabBank" text="The Bank">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
@@ -194,17 +194,17 @@
                   <TextField fx:id="TextFieldLoan1" layoutX="524.0" layoutY="189.0" />
                   <TextField fx:id="TextFieldLoan2" layoutX="522.0" layoutY="377.0" />
                   <TextField fx:id="TextFieldLoan3" layoutX="529.0" layoutY="563.0" />
-                  <Button fx:id="ButtonLoan1" layoutX="574.0" layoutY="243.0" mnemonicParsing="false" text="Loan" />
-                  <Button fx:id="ButtonLoan2" layoutX="581.0" layoutY="428.0" mnemonicParsing="false" text="Loan" />
-                  <Button fx:id="ButtonLoan3" layoutX="575.0" layoutY="612.0" mnemonicParsing="false" text="Loan" />
-                  <Button fx:id="ButtonBankBack" layoutX="1089.0" layoutY="693.0" mnemonicParsing="false" text="Back" />
+                  <Button fx:id="ButtonLoan1" layoutX="574.0" layoutY="243.0" mnemonicParsing="false" onAction="#BankLoan" text="Loan" />
+                  <Button fx:id="ButtonLoan2" layoutX="581.0" layoutY="428.0" mnemonicParsing="false" onAction="#BankLoan" text="Loan" />
+                  <Button fx:id="ButtonLoan3" layoutX="575.0" layoutY="612.0" mnemonicParsing="false" onAction="#BankLoan" text="Loan" />
+                  <Button fx:id="ButtonBankBack" layoutX="1089.0" layoutY="693.0" mnemonicParsing="false" onAction="#GoToMainScreen" text="Back" />
                   <Label layoutX="583.0" layoutY="147.0" text="Loan 1" textFill="WHITE" />
                   <Label layoutX="582.0" layoutY="342.0" text="Loan 2" textFill="WHITE" />
                   <Label layoutX="583.0" layoutY="525.0" text="Loan 3" textFill="WHITE" />
                </children></AnchorPane>
         </content>
       </Tab>
-      <Tab text="Property Market">
+      <Tab fx:id="TabPropertyMarket" text="Property Market">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
@@ -224,13 +224,22 @@
                         <NumberAxis side="LEFT" />
                      </yAxis>
                   </LineChart>
-                  <Button fx:id="ButtonPropertyMarketBack" layoutX="1073.0" layoutY="697.0" mnemonicParsing="false" text="Back" />
+                  <Button fx:id="ButtonPropertyMarketBack" layoutX="1073.0" layoutY="697.0" mnemonicParsing="false" onAction="#GoToMainScreen" text="Back" />
                </children></AnchorPane>
         </content>
       </Tab>
-      <Tab text="Leaderboard">
+      <Tab fx:id="TabLeaderboard" text="Leaderboard">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
+               <children>
+                  <ListView fx:id="ListViewLeaderboard" layoutX="386.0" layoutY="92.0" prefHeight="480.0" prefWidth="400.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="400.0" />
+                  <Label layoutX="480.0" layoutY="23.0" text="Leaderboard" textFill="WHITE">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="ButtonLeaderboadBack" layoutX="1085.0" layoutY="690.0" mnemonicParsing="false" onAction="#GoToMainScreen" text="Back" />
+               </children></AnchorPane>
         </content>
       </Tab>
   </tabs>
