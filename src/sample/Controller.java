@@ -7,9 +7,8 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 
 public class Controller {
-
-   @FXML
-   TabPane tabPane;
+    @FXML
+    private TabPane tabPane;
 
  // Buttons -------------------------------------------------------------
     @FXML
