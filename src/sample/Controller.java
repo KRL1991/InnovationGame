@@ -3,13 +3,14 @@ package sample;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.chart.LineChart;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 
 public class Controller {
+
+   @FXML
+   TabPane tabPane;
+
  // Buttons -------------------------------------------------------------
     @FXML
     private Button welcomeScreenStartButton;
@@ -161,16 +162,44 @@ public class Controller {
     @FXML
     private ListView<?> ListViewLeaderboard;
 
+   // Tabs -------------------------------------------------------------
+
+   @FXML
+   private Tab TabWelcomeScreen;
+
+   @FXML
+   private Tab TabDifficultyScreen;
+
+   @FXML
+   private Tab TabCreateInvestor;
+
+   @FXML
+   private Tab TabMainScreen;
+
+   @FXML
+   private Tab TabOwnedProperties;
+
+   @FXML
+   private Tab TabBank;
+
+   @FXML
+   private Tab TabPropertyMarket;
+
+   @FXML
+   private Tab TabLeaderboard;
 
 
 // Methods
     @FXML
     void GoToCreateInvestor(ActionEvent event) {
 
+
+
     }
 
     @FXML
     void GoToDifficultyScreen(ActionEvent event) {
+       tabPane.getSelectionModel();
 
     }
 

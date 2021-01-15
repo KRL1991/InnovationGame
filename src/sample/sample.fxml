@@ -17,7 +17,7 @@
 
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
   <tabs>
-    <Tab text="Welcome Screen">
+    <Tab fx:id="TabWelcomeScreen" text="Welcome Screen">
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
@@ -36,7 +36,7 @@
                </children></AnchorPane>
       </content>
     </Tab>
-    <Tab text="Difficulty Screen">
+    <Tab fx:id="TabDifficultyScreen" text="Difficulty Screen">
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
@@ -54,7 +54,7 @@
                </children></AnchorPane>
       </content>
     </Tab>
-      <Tab text="Create Investor">
+      <Tab fx:id="TabCreateInvestor" text="Create Investor">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
@@ -87,7 +87,7 @@
             </AnchorPane>
         </content>
       </Tab>
-      <Tab text="Main Screen">
+      <Tab fx:id="TabMainScreen" text="Main Screen">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
@@ -131,7 +131,7 @@
             </AnchorPane>
         </content>
       </Tab>
-      <Tab text="New Properties">
+      <Tab fx:id="TabNewProperties" text="New Properties">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
@@ -165,7 +165,7 @@
                </children></AnchorPane>
         </content>
       </Tab>
-      <Tab text="Owned Properties">
+      <Tab fx:id="TabOwnedProperties" text="Owned Properties">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
@@ -182,7 +182,7 @@
                </children></AnchorPane>
         </content>
       </Tab>
-      <Tab text="The Bank">
+      <Tab fx:id="TabBank" text="The Bank">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
@@ -204,7 +204,7 @@
                </children></AnchorPane>
         </content>
       </Tab>
-      <Tab text="Property Market">
+      <Tab fx:id="TabPropertyMarket" text="Property Market">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
@@ -228,7 +228,7 @@
                </children></AnchorPane>
         </content>
       </Tab>
-      <Tab text="Leaderboard">
+      <Tab fx:id="TabLeaderboard" text="Leaderboard">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
