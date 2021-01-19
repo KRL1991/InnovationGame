@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@HideTabs.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@HideTabs.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
   <tabs>
     <Tab fx:id="TabWelcomeScreen" text="Welcome Screen">
       <content>
@@ -120,7 +120,7 @@
                      <font>
                         <Font size="18.0" />
                      </font></Label>
-                  <TextField fx:id="TextFieldCurrentAmountDebt" alignment="CENTER" editable="false" layoutX="956.0" layoutY="373.0" text="X amount of debt" />
+                  <TextField fx:id="TextFieldCurrentAmountDebt" alignment="CENTER" editable="false" layoutX="956.0" layoutY="373.0" />
                   <TextArea fx:id="TextAreaEventLog" layoutX="819.0" layoutY="441.0" prefHeight="200.0" prefWidth="300.0" />
                   <Label layoutX="928.0" layoutY="407.0" text="EventLog" textFill="WHITE">
                      <font>
@@ -192,12 +192,12 @@
                         <Font size="48.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="TextFieldLoan1" layoutX="524.0" layoutY="189.0" />
-                  <TextField fx:id="TextFieldLoan2" layoutX="522.0" layoutY="377.0" />
-                  <TextField fx:id="TextFieldLoan3" layoutX="529.0" layoutY="563.0" />
-                  <Button fx:id="ButtonLoan1" layoutX="574.0" layoutY="243.0" mnemonicParsing="false" onAction="#BankLoan" text="Loan" />
-                  <Button fx:id="ButtonLoan2" layoutX="581.0" layoutY="428.0" mnemonicParsing="false" onAction="#BankLoan" text="Loan" />
-                  <Button fx:id="ButtonLoan3" layoutX="575.0" layoutY="612.0" mnemonicParsing="false" onAction="#BankLoan" text="Loan" />
+                  <TextField fx:id="TextFieldLoan1" alignment="CENTER" editable="false" layoutX="524.0" layoutY="189.0" />
+                  <TextField fx:id="TextFieldLoan2" alignment="CENTER" editable="false" layoutX="522.0" layoutY="377.0" />
+                  <TextField fx:id="TextFieldLoan3" alignment="CENTER" editable="false" layoutX="529.0" layoutY="563.0" />
+                  <Button fx:id="ButtonLoan1" alignment="CENTER" layoutX="574.0" layoutY="243.0" mnemonicParsing="false" onAction="#BankLoanOne" text="Loan" />
+                  <Button fx:id="ButtonLoan2" alignment="CENTER" layoutX="581.0" layoutY="428.0" mnemonicParsing="false" onAction="#BankLoanTwo" text="Loan" />
+                  <Button fx:id="ButtonLoan3" alignment="CENTER" layoutX="575.0" layoutY="612.0" mnemonicParsing="false" onAction="#BankLoanThree" text="Loan" />
                   <Button fx:id="ButtonBankBack" layoutX="1089.0" layoutY="693.0" mnemonicParsing="false" onAction="#GoToMainScreen" text="Back" />
                   <Label layoutX="583.0" layoutY="147.0" text="Loan 1" textFill="WHITE" />
                   <Label layoutX="582.0" layoutY="342.0" text="Loan 2" textFill="WHITE" />

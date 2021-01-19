@@ -16,7 +16,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Controller {
-
+    int currentAmountMoneyInt;
     String currentAmount;
 
     int counter;
@@ -165,6 +165,7 @@ public class Controller {
     @FXML
     private TextField TextFieldLoan1;
 
+
     @FXML
     private TextField TextFieldLoan2;
 
@@ -234,10 +235,6 @@ public class Controller {
 
 // Methods
 
-   @FXML
-   void BankLoan(ActionEvent event) {
-
-   }
 
     @FXML
     void BuyPropertiesLeft(ActionEvent event) {
@@ -280,7 +277,95 @@ public class Controller {
    void GoToBank(ActionEvent event) {
       tabPane.getSelectionModel().select(TabBank);
 
+       int loanOne = 10000;
+
+       TextFieldLoan1.setText("10.000 $");
+
+       double loanTwo = 40000;
+
+       TextFieldLoan2.setText("40.000 $");
+
+       double loanThree = 100000;
+
+       TextFieldLoan3.setText("100.000 $");
    }
+    @FXML
+    void BankLoanOne(ActionEvent event) {
+        TextFieldCurrentAmountMoney.getText();
+        int loan1 = 10000;
+        int sum;
+        int sumDebt;
+
+        currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
+
+        sum = currentAmountMoneyInt + loan1;
+
+        currentAmountMoneyInt = sum;
+
+        currentAmount = String.valueOf(currentAmountMoneyInt);
+
+        TextFieldCurrentAmountMoney.setText(currentAmount);
+
+        int debt = Integer.parseInt(TextFieldCurrentAmountDebt.getText());
+
+        sumDebt = debt + 10000;
+
+        TextFieldCurrentAmountDebt.setText(String.valueOf(sumDebt));
+
+        tabPane.getSelectionModel().select(TabMainScreen);
+    }
+
+    @FXML
+    void BankLoanThree(ActionEvent event) {
+        TextFieldCurrentAmountMoney.getText();
+        int loan3 = 100000;
+        int sum3;
+        int sumDebt3;
+
+        currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
+
+        sum3 = currentAmountMoneyInt + loan3;
+
+        currentAmountMoneyInt = sum3;
+
+        currentAmount = String.valueOf(currentAmountMoneyInt);
+
+        TextFieldCurrentAmountMoney.setText(currentAmount);
+
+        int debt = Integer.parseInt(TextFieldCurrentAmountDebt.getText());
+
+        sumDebt3 = debt + 100000;
+
+        TextFieldCurrentAmountDebt.setText(String.valueOf(sumDebt3));
+
+        tabPane.getSelectionModel().select(TabMainScreen);
+    }
+
+    @FXML
+    void BankLoanTwo(ActionEvent event) {
+        TextFieldCurrentAmountMoney.getText();
+        int loan2 = 40000;
+        int sum2;
+        int sumDebt2;
+        currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
+
+        sum2 = currentAmountMoneyInt + loan2;
+
+        currentAmountMoneyInt = sum2;
+
+        currentAmount = String.valueOf(currentAmountMoneyInt);
+
+        TextFieldCurrentAmountMoney.setText(currentAmount);
+
+        int debt = Integer.parseInt(TextFieldCurrentAmountDebt.getText());
+
+        sumDebt2 = debt + 40000;
+
+        TextFieldCurrentAmountDebt.setText(String.valueOf(sumDebt2));
+
+        tabPane.getSelectionModel().select(TabMainScreen);
+    }
+
 // Difficulty Screen ----------------------------------------------------------
 
    @FXML
@@ -288,8 +373,10 @@ public class Controller {
       tabPane.getSelectionModel().select(TabCreateInvestor);
 
        TextFieldCurrentAmountMoney.clear();
-       TextFieldCurrentAmountMoney.appendText("100.000 $");
-
+       TextFieldCurrentAmountMoney.setText("100000");
+       //TextFieldCurrentAmountMoney.appendText("$");
+       TextFieldCurrentAmountDebt.clear();
+       TextFieldCurrentAmountDebt.setText("0");
    }
 
    @FXML
@@ -297,8 +384,10 @@ public class Controller {
       tabPane.getSelectionModel().select(TabCreateInvestor);
 
        TextFieldCurrentAmountMoney.clear();
-       TextFieldCurrentAmountMoney.appendText("50.000 $");
-
+       TextFieldCurrentAmountMoney.setText("50000");
+      // TextFieldCurrentAmountMoney.appendText("$");
+       TextFieldCurrentAmountDebt.clear();
+       TextFieldCurrentAmountDebt.setText("0");
    }
 
    @FXML
@@ -306,7 +395,10 @@ public class Controller {
       tabPane.getSelectionModel().select(TabCreateInvestor);
 
        TextFieldCurrentAmountMoney.clear();
-       TextFieldCurrentAmountMoney.appendText("75.000 $");
+       TextFieldCurrentAmountMoney.setText("75000");
+       //TextFieldCurrentAmountMoney.appendText("$");
+       TextFieldCurrentAmountDebt.clear();
+       TextFieldCurrentAmountDebt.setText("0");
 
    }
 
