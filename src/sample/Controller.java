@@ -9,11 +9,25 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import javax.imageio.stream.ImageInputStream;
+import javax.management.monitor.CounterMonitor;
 import java.io.InputStream;
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 public class Controller {
 
     String currentAmount;
+
+    int counter;
+
+
+    ArrayList<Image> arrayName = new ArrayList<Image>();
+
+
+    //ArrayList propertyPrices = new ArrayList();
+
+
 
     @FXML
     private TabPane tabPane;
@@ -102,6 +116,9 @@ public class Controller {
     @FXML
     private Button ButtonLeaderboadBack;
 
+
+
+
     // Imageviews -------------------------------------------------------------
     @FXML
     private ImageView ImageViewWelcomeScreenLogo;
@@ -156,6 +173,16 @@ public class Controller {
 
     @FXML
     private TextField TextFieldAge;
+
+    @FXML
+    private TextField NewPropertyLeftPrice;
+
+    @FXML
+    private TextField NewPropertyMiddlePrice;
+
+    @FXML
+    private TextField NewPropertyRightPrice;
+
 
     // TextArea -------------------------------------------------------------
     @FXML
@@ -212,10 +239,20 @@ public class Controller {
 
    }
 
-   @FXML
-   void BuyProperties(ActionEvent event) {
+    @FXML
+    void BuyPropertiesLeft(ActionEvent event) {
 
-   }
+    }
+
+    @FXML
+    void BuyPropertiesMiddle(ActionEvent event) {
+
+    }
+
+    @FXML
+    void BuyPropertiesRight(ActionEvent event) {
+
+    }
 
    @FXML
    void ConvertBuilding(ActionEvent event) {
@@ -236,10 +273,6 @@ public class Controller {
 
        ImageviewInvesterOfficeAvatar.setImage(male);
        */
-
-
-
-
 
    }
 
@@ -336,4 +369,40 @@ public class Controller {
 
    }
 
-}
+    @FXML
+    void ButtonMainScreenEndDay(ActionEvent event) {
+
+       // Updates which day it is
+       TextFieldDayCounter.clear();
+       counter++;
+       TextFieldDayCounter.setText("Day: " + counter);
+
+       TextFieldHomePropertiesMarket.clear();
+       TextFieldOfficePropertiesMarket.clear();
+
+
+       // Updates Property Market
+       double randomHomeMarket = Math.random()* 20- 10;
+       randomHomeMarket = Math.round(randomHomeMarket);
+       TextFieldHomePropertiesMarket.setText(String.valueOf(randomHomeMarket));
+
+       double randomOfficeMarket = Math.random()* 20-10;
+       randomOfficeMarket = Math.round(randomOfficeMarket);
+       TextFieldOfficePropertiesMarket.setText(String.valueOf(randomOfficeMarket));
+
+
+   }
+
+   void houses (){
+
+       Image imageName = new Image("/housePictures/low end house 1.jpg");
+       arrayName.add(imageName);
+       arrayName.add(imageName);
+   }
+
+
+        }
+
+
+
+
