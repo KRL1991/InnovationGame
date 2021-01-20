@@ -246,16 +246,45 @@ public class Controller {
     @FXML
     void BuyPropertiesLeft(ActionEvent event) {
 
+    int housePrice = Integer.parseInt(NewPropertyLeftPrice.getText());
+
+    int updatedAmountOfMoney = currentAmountMoneyInt - housePrice;
+
+    TextFieldCurrentAmountMoney.setText(String.valueOf(updatedAmountOfMoney));
+
+    currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
+
+        tabPane.getSelectionModel().select(TabMainScreen);
+        //TODO If player doesn't have enough money they can't buy the property
     }
 
     @FXML
     void BuyPropertiesMiddle(ActionEvent event) {
+
+        int housePrice = Integer.parseInt(NewPropertyMiddlePrice.getText());
+
+        int updatedAmountOfMoney = currentAmountMoneyInt - housePrice;
+
+        TextFieldCurrentAmountMoney.setText(String.valueOf(updatedAmountOfMoney));
+
+        currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
+
+        tabPane.getSelectionModel().select(TabMainScreen);
 
     }
 
     @FXML
     void BuyPropertiesRight(ActionEvent event) {
 
+        int housePrice = Integer.parseInt(NewPropertyRightPrice.getText());
+
+        int updatedAmountOfMoney = currentAmountMoneyInt - housePrice;
+
+        TextFieldCurrentAmountMoney.setText(String.valueOf(updatedAmountOfMoney));
+
+        currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
+
+        tabPane.getSelectionModel().select(TabMainScreen);
     }
 
    @FXML
@@ -381,6 +410,7 @@ public class Controller {
 
        TextFieldCurrentAmountMoney.clear();
        TextFieldCurrentAmountMoney.setText("100000");
+       currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
        //TextFieldCurrentAmountMoney.appendText("$");
        TextFieldCurrentAmountDebt.clear();
        TextFieldCurrentAmountDebt.setText("0");
@@ -392,6 +422,7 @@ public class Controller {
 
        TextFieldCurrentAmountMoney.clear();
        TextFieldCurrentAmountMoney.setText("50000");
+       currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
       // TextFieldCurrentAmountMoney.appendText("$");
        TextFieldCurrentAmountDebt.clear();
        TextFieldCurrentAmountDebt.setText("0");
@@ -403,6 +434,7 @@ public class Controller {
 
        TextFieldCurrentAmountMoney.clear();
        TextFieldCurrentAmountMoney.setText("75000");
+       currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
        //TextFieldCurrentAmountMoney.appendText("$");
        TextFieldCurrentAmountDebt.clear();
        TextFieldCurrentAmountDebt.setText("0");
@@ -418,8 +450,116 @@ public class Controller {
 // .....
 
    @FXML
-   void GoToInvestInNewProperty(ActionEvent event) {
+   void GoToInvestInNewProperty(ActionEvent event) throws FileNotFoundException {
       tabPane.getSelectionModel().select(TabNewProperties);
+
+       Image lowEndHouse1 = new Image(new FileInputStream("src/housePictures/low end house 1.jpg"));
+       Image lowEndHouse2 = new Image(new FileInputStream("src/housePictures/low end house 2.jpeg"));
+       Image lowEndHouse3 = new Image(new FileInputStream("src/housePictures/low end house 3.jpeg"));
+       Image lowEndHouse4 = new Image(new FileInputStream("src/housePictures/low end house 4.jpeg"));
+       Image lowEndHouse5 = new Image(new FileInputStream("src/housePictures/low end house 5.jpg"));
+       Image lowEndHouse7 = new Image(new FileInputStream("src/housePictures/low end house 7.jpg"));
+
+       Image midTierHouse1 = new Image(new FileInputStream("src/housePictures/mid tier house 1.jpg"));
+       Image midTierHouse2 = new Image(new FileInputStream("src/housePictures/mid tier house 2.jpg"));
+       Image midTierHouse3 = new Image(new FileInputStream("src/housePictures/mid tier house 3.jpg"));
+       Image midTierHouse4 = new Image(new FileInputStream("src/housePictures/mid tier house 4.jpg"));
+       Image midTierHouse5 = new Image(new FileInputStream("src/housePictures/mid tier house 5.jpg"));
+       Image midTierHouse6 = new Image(new FileInputStream("src/housePictures/mid tier house 6.jpg"));
+       Image midTierHouse7 = new Image(new FileInputStream("src/housePictures/mid tier house 7.jpg"));
+       Image midTierHouse8 = new Image(new FileInputStream("src/housePictures/mid tier house 8.jpg"));
+       Image midTierHouse9 = new Image(new FileInputStream("src/housePictures/mid tier house 9.jpg"));
+       Image midTierHouse10 = new Image(new FileInputStream("src/housePictures/mid tier house 10.jpg"));
+
+       Image luxeryProperty1 = new Image(new FileInputStream("src/housePictures/Luxery property 1.jpg"));
+       Image luxeryProperty2 = new Image(new FileInputStream("src/housePictures/Luxery property 2.jpg"));
+       Image luxeryProperty3 = new Image(new FileInputStream("src/housePictures/Luxery property 3.jpg"));
+       Image luxeryProperty4 = new Image(new FileInputStream("src/housePictures/Luxery property 4.jpg"));
+       Image luxeryProperty5 = new Image(new FileInputStream("src/housePictures/Luxery property 5.jpg"));
+       Image luxeryProperty6 = new Image(new FileInputStream("src/housePictures/Luxery property 6.jpg"));
+       Image luxeryProperty7 = new Image(new FileInputStream("src/housePictures/Luxery property 7.jpg"));
+       Image luxeryProperty8 = new Image(new FileInputStream("src/housePictures/Luxery property 8.jpg"));
+       Image luxeryProperty9 = new Image(new FileInputStream("src/housePictures/Luxery property 9.jpg"));
+
+
+       ArrayList<Image> housePicture = new ArrayList<>();
+
+       housePicture.add(lowEndHouse1);
+       housePicture.add(lowEndHouse2);
+       housePicture.add(lowEndHouse3);
+       housePicture.add(lowEndHouse4);
+       housePicture.add(lowEndHouse5);
+       housePicture.add(lowEndHouse7);
+       housePicture.add(midTierHouse1);
+       housePicture.add(midTierHouse2);
+       housePicture.add(midTierHouse3);
+       housePicture.add(midTierHouse4);
+       housePicture.add(midTierHouse5);
+       housePicture.add(midTierHouse6);
+       housePicture.add(midTierHouse7);
+       housePicture.add(midTierHouse8);
+       housePicture.add(midTierHouse9);
+       housePicture.add(midTierHouse10);
+       housePicture.add(luxeryProperty1);
+       housePicture.add(luxeryProperty2);
+       housePicture.add(luxeryProperty3);
+       housePicture.add(luxeryProperty4);
+       housePicture.add(luxeryProperty5);
+       housePicture.add(luxeryProperty6);
+       housePicture.add(luxeryProperty7);
+       housePicture.add(luxeryProperty8);
+       housePicture.add(luxeryProperty9);
+
+       System.out.println(housePicture.size());
+
+
+       ArrayList<Integer> housePrices = new ArrayList<>();
+
+       housePrices.add(15000);
+       housePrices.add(20000);
+       housePrices.add(17250);
+       housePrices.add(23000);
+       housePrices.add(25200);
+       housePrices.add(23500);
+
+       housePrices.add(50000);
+       housePrices.add(55500);
+       housePrices.add(60250);
+       housePrices.add(58000);
+       housePrices.add(65000);
+       housePrices.add(62000);
+       housePrices.add(52000);
+       housePrices.add(60000);
+       housePrices.add(56500);
+       housePrices.add(64000);
+
+       housePrices.add(110000);
+       housePrices.add(125000);
+       housePrices.add(140000);
+       housePrices.add(145000);
+       housePrices.add(161000);
+       housePrices.add(115000);
+       housePrices.add(181000);
+       housePrices.add(128000);
+       housePrices.add(200000);
+
+       System.out.println(housePrices.size());
+
+       double randomIndexLeft = Math.random()*25;
+       ImageViewNewPropertiesLeft.setImage(housePicture.get((int)randomIndexLeft));
+       NewPropertyLeftPrice.setText(String.valueOf(housePrices.get((int) randomIndexLeft)));
+
+       double randomIndexMiddle = Math.random()*25;
+       ImageViewNewPropertiesMiddle.setImage(housePicture.get((int)randomIndexMiddle));
+       NewPropertyMiddlePrice.setText(String.valueOf(housePrices.get((int) randomIndexMiddle)));
+
+       double randomIndexRight = Math.random()*25;
+       ImageViewNewPropertiesRight.setImage(housePicture.get((int)randomIndexRight));
+       NewPropertyRightPrice.setText(String.valueOf(housePrices.get((int) randomIndexRight)));
+
+
+
+
    }
 
    @FXML
@@ -535,101 +675,6 @@ public class Controller {
 
 
     }
-
-
-   public void houses () throws FileNotFoundException {
-
-       Image lowEndHouse1 = new Image(new FileInputStream("src/housePictures/low end house 1.jpg"));
-       Image lowEndHouse2 = new Image(new FileInputStream("src/housePictures/low end house 2.jpeg"));
-       Image lowEndHouse3 = new Image(new FileInputStream("src/housePictures/low end house 3.jpeg"));
-       Image lowEndHouse4 = new Image(new FileInputStream("src/housePictures/low end house 4.jpeg"));
-       Image lowEndHouse5 = new Image(new FileInputStream("src/housePictures/low end house 5.jpg"));
-       Image lowEndHouse7 = new Image(new FileInputStream("src/housePictures/low end house 7.jpg"));
-       Image midTierHouse1 = new Image(new FileInputStream("src/housePictures/mid tier house 1.jpg"));
-       Image midTierHouse2 = new Image(new FileInputStream("src/housePictures/mid tier house 2.jpg"));
-       Image midTierHouse3 = new Image(new FileInputStream("src/housePictures/mid tier house 3.jpg"));
-       Image midTierHouse4 = new Image(new FileInputStream("src/housePictures/mid tier house 4.jpg"));
-       Image midTierHouse5 = new Image(new FileInputStream("src/housePictures/mid tier house 5.jpg"));
-       Image midTierHouse6 = new Image(new FileInputStream("src/housePictures/mid tier house 6.jpg"));
-       Image midTierHouse7 = new Image(new FileInputStream("src/housePictures/mid tier house 7.jpg"));
-       Image midTierHouse8 = new Image(new FileInputStream("src/housePictures/mid tier house 8.jpg"));
-       Image midTierHouse9 = new Image(new FileInputStream("src/housePictures/mid tier house 9.jpg"));
-       Image midTierHouse10 = new Image(new FileInputStream("src/housePictures/mid tier house 10.jpg"));
-       Image luxeryProperty1 = new Image(new FileInputStream("src/housePictures/Luxery property 1.jpg"));
-       Image luxeryProperty2 = new Image(new FileInputStream("src/housePictures/Luxery property 2.jpg"));
-       Image luxeryProperty3 = new Image(new FileInputStream("src/housePictures/Luxery property 3.jpg"));
-       Image luxeryProperty4 = new Image(new FileInputStream("src/housePictures/Luxery property 4.jpg"));
-       Image luxeryProperty5 = new Image(new FileInputStream("src/housePictures/Luxery property 5.jpg"));
-       Image luxeryProperty6 = new Image(new FileInputStream("src/housePictures/Luxery property 6.jpg"));
-       Image luxeryProperty7 = new Image(new FileInputStream("src/housePictures/Luxery property 7.jpg"));
-       Image luxeryProperty8 = new Image(new FileInputStream("src/housePictures/Luxery property 8.jpg"));
-       Image luxeryProperty9 = new Image(new FileInputStream("src/housePictures/Luxery property 9.jpg"));
-
-
-       ArrayList<Image> housePicture = new ArrayList<>();
-
-       housePicture.add(lowEndHouse1);
-       housePicture.add(lowEndHouse2);
-       housePicture.add(lowEndHouse3);
-       housePicture.add(lowEndHouse4);
-       housePicture.add(lowEndHouse5);
-       housePicture.add(lowEndHouse7);
-       housePicture.add(midTierHouse1);
-       housePicture.add(midTierHouse2);
-       housePicture.add(midTierHouse3);
-       housePicture.add(midTierHouse4);
-       housePicture.add(midTierHouse5);
-       housePicture.add(midTierHouse6);
-       housePicture.add(midTierHouse7);
-       housePicture.add(midTierHouse8);
-       housePicture.add(midTierHouse9);
-       housePicture.add(midTierHouse10);
-       housePicture.add(luxeryProperty1);
-       housePicture.add(luxeryProperty2);
-       housePicture.add(luxeryProperty3);
-       housePicture.add(luxeryProperty4);
-       housePicture.add(luxeryProperty5);
-       housePicture.add(luxeryProperty6);
-       housePicture.add(luxeryProperty7);
-       housePicture.add(luxeryProperty8);
-       housePicture.add(luxeryProperty9);
-
-       System.out.println(housePicture.size());
-
-
-       ArrayList<Double> housePrices = new ArrayList<>();
-
-        housePrices.add(15000.00);
-        housePrices.add(20000.00);
-        housePrices.add(17250.00);
-        housePrices.add(23000.00);
-        housePrices.add(25200.00);
-        housePrices.add(23500.00);
-
-        housePrices.add(50000.00);
-        housePrices.add(55500.00);
-        housePrices.add(60250.00);
-        housePrices.add(58000.00);
-        housePrices.add(65000.00);
-        housePrices.add(62000.00);
-        housePrices.add(52000.00);
-        housePrices.add(60000.00);
-        housePrices.add(56500.00);
-        housePrices.add(64000.00);
-
-        housePrices.add(110000.00);
-        housePrices.add(125000.00);
-        housePrices.add(140000.00);
-        housePrices.add(145000.00);
-        housePrices.add(161000.00);
-        housePrices.add(115000.00);
-        housePrices.add(181000.00);
-        housePrices.add(128000.00);
-        housePrices.add(200000.00);
-
-       System.out.println(housePrices.size());
-
-   }
 
     @FXML
     void repairProperty(ActionEvent event) {
