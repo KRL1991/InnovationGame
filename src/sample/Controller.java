@@ -14,6 +14,7 @@ import java.io.InputStream;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Controller {
     int currentAmountMoneyInt;
@@ -115,6 +116,10 @@ public class Controller {
 
     @FXML
     private Button ButtonLeaderboadBack;
+
+    @FXML
+    private Button ButtonOwnedPropertiesRepair;
+
 
 
 
@@ -400,6 +405,7 @@ public class Controller {
        TextFieldCurrentAmountDebt.clear();
        TextFieldCurrentAmountDebt.setText("0");
 
+
    }
 
    @FXML
@@ -471,6 +477,7 @@ public class Controller {
 
        TextFieldHomePropertiesMarket.clear();
        TextFieldOfficePropertiesMarket.clear();
+       TextAreaEventLog.clear();
 
 
        // Updates Property Market
@@ -482,8 +489,43 @@ public class Controller {
        randomOfficeMarket = Math.round(randomOfficeMarket);
        TextFieldOfficePropertiesMarket.setText(String.valueOf(randomOfficeMarket));
 
+       //TODO multiply the values with the property prices to increase or decrease its value
 
-   }
+
+       //Eventlog on End Day
+
+        ArrayList<String> events = new ArrayList<>();
+
+        events.add("The property market is going well\n+to Home and Office market");
+        events.add("You’ve received positive reviews on yelp\nx amount of money gained");
+        events.add("One of your building is in a upcoming neighborhood\n+ 5 to home properties");
+        events.add("A fond has donated some money to your company\nx amount of money gained");
+        events.add("A small fire has damaged one of your properties\nits income will be suspended until repaired");
+        events.add("A rainfall gave one of your buildings flood damage\nits income will be suspended until repaired");
+        events.add("A tenant have caused some minor damage to one of your properties\nits income will be suspended until repaired");
+        events.add("A storm broke some windows in one of your properties\nits income will be suspended until repaired");
+        events.add("A earthquake hit the area\nand one of your properties has sustained minor damage to its foundation\nits income will be suspended until repaired");
+        events.add("A big football match took place near one of your buildings\nand hooligans destroyed the facade of one of your properties\nits income will be suspended until repaired");
+        events.add("A heavy rainfall gave one of your buildings flood damage\nits income will be suspended until repaired");
+        events.add("A tenant caused damage to one of your properties\nits income will be suspended until repaired");
+        events.add("A fire has damaged one of your properties\nits income will be suspended until repaired");
+        events.add("A tenant caused a lot of damage to one of your properties\nits income will be suspended until repaired");
+        events.add("A very heavy rainfall gave one of your buildings very bad flood damage\nits income will be suspended until repaired");
+        events.add("A big fire has destroyed most of the interior in one of your properties\nits income will be suspended until repaired");
+
+        Collections.shuffle(events);
+        TextAreaEventLog.appendText(events.get(5));
+
+
+       /* double randomCost =  Math.random()*1000;
+        boolean ans = events.contains("repaired");
+        if (ans==true) {
+          TextAreaEventLog.setText(String.valueOf(randomCost));
+        } else TextAreaEventLog.appendText("hello");
+        */
+
+    }
+
 
    void houses (){
 
@@ -491,6 +533,13 @@ public class Controller {
        arrayName.add(imageName);
        arrayName.add(imageName);
    }
+
+    @FXML
+    void repairProperty(ActionEvent event) {
+
+
+
+    }
 
 
         }
