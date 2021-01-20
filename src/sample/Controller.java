@@ -10,6 +10,8 @@ import javafx.scene.image.ImageView;
 
 import javax.imageio.stream.ImageInputStream;
 import javax.management.monitor.CounterMonitor;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
@@ -517,21 +519,56 @@ public class Controller {
         TextAreaEventLog.appendText(events.get(5));
 
 
-       /* double randomCost =  Math.random()*1000;
-        boolean ans = events.contains("repaired");
+
+        boolean ans = events.contains("The property market is going well\n+to Home and Office market");
         if (ans==true) {
-          TextAreaEventLog.setText(String.valueOf(randomCost));
+            double randomUpdate =  Math.random()*5;
+            int updatedMarket = (int) ((int)randomUpdate + randomHomeMarket);
+            int updatedOfficeMarket = (int) ((int)randomUpdate + randomOfficeMarket);
+        TextFieldHomePropertiesMarket.setText(String.valueOf(updatedMarket));
+        TextFieldOfficePropertiesMarket.setText((String.valueOf(updatedOfficeMarket)));
+
         } else TextAreaEventLog.appendText("hello");
-        */
+
+
+
+
 
     }
 
 
-   void houses (){
+   public void houses () throws FileNotFoundException {
 
-       Image imageName = new Image("/housePictures/low end house 1.jpg");
-       arrayName.add(imageName);
-       arrayName.add(imageName);
+       Image lowEndHouse1 = new Image(new FileInputStream("src/housePictures/low end house 1.jpg"));
+       Image lowEndHouse2 = new Image(new FileInputStream("src/housePictures/low end house 2.jpeg"));
+       Image lowEndHouse3 = new Image(new FileInputStream("src/housePictures/low end house 3.jpeg"));
+       Image lowEndHouse4 = new Image(new FileInputStream("src/housePictures/low end house 4.jpeg"));
+       Image lowEndHouse5 = new Image(new FileInputStream("src/housePictures/low end house 5.jpg"));
+       Image lowEndHouse7 = new Image(new FileInputStream("src/housePictures/low end house 7.jpg"));
+       Image midTierHouse1 = new Image(new FileInputStream("src/housePictures/mid tier house 1.jpg"));
+       Image midTierHouse2 = new Image(new FileInputStream("src/housePictures/mid tier house 2.jpg"));
+       Image midTierHouse3 = new Image(new FileInputStream("src/housePictures/mid tier house 3.jpg"));
+       Image midTierHouse4 = new Image(new FileInputStream("src/housePictures/mid tier house 4.jpg"));
+       Image midTierHouse5 = new Image(new FileInputStream("src/housePictures/mid tier house 5.jpg"));
+       Image midTierHouse6 = new Image(new FileInputStream("src/housePictures/mid tier house 6.jpg"));
+       Image midTierHouse7 = new Image(new FileInputStream("src/housePictures/mid tier house 7.jpg"));
+       Image midTierHouse8 = new Image(new FileInputStream("src/housePictures/mid tier house 8.jpg"));
+       Image midTierHouse9 = new Image(new FileInputStream("src/housePictures/mid tier house 9.jpg"));
+       Image midTierHouse10 = new Image(new FileInputStream("src/housePictures/mid tier house 10.jpg"));
+
+
+       ArrayList<Image> housePicture = new ArrayList<>();
+
+       housePicture.add(lowEndHouse1);
+       housePicture.add(lowEndHouse2);
+       housePicture.add(lowEndHouse3);
+       housePicture.add(lowEndHouse4);
+       housePicture.add(lowEndHouse5);
+       housePicture.add(lowEndHouse7);
+
+
+
+       System.out.println(housePicture.size());
    }
 
     @FXML

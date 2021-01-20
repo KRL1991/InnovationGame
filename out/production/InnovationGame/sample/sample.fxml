@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@HideTabs.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@HideTabs.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
   <tabs>
     <Tab fx:id="TabWelcomeScreen" text="Welcome Screen">
       <content>
@@ -97,7 +97,7 @@
                      </image>
                   </ImageView>
                   <TextField fx:id="TextFieldName" alignment="CENTER" editable="false" layoutX="956.0" layoutY="240.0" text="Bob" />
-                  <TextField fx:id="TextFieldCurrentAmountMoney" alignment="CENTER" editable="false" layoutX="956.0" layoutY="333.0" text="X amount of money" />
+                  <TextField fx:id="TextFieldCurrentAmountMoney" alignment="CENTER" editable="false" layoutX="956.0" layoutY="348.0" />
                   <Label layoutX="446.0" layoutY="39.0" text="Investor Office" textFill="#fcfcfc">
                      <font>
                         <Font size="48.0" />
@@ -105,11 +105,11 @@
                   </Label>
                   <TextField fx:id="TextFieldDayCounter" editable="false" layoutX="44.0" layoutY="59.0" text="Day: X" />
                   <Button fx:id="ButtonEndDay" layoutX="508.0" layoutY="609.0" mnemonicParsing="false" onAction="#ButtonMainScreenEndDay" prefHeight="30.0" prefWidth="180.0" text="End Day" />
-                  <Button fx:id="ButtonInvestInNewProperty" layoutX="44.0" layoutY="150.0" mnemonicParsing="false" onAction="#GoToInvestInNewProperty" prefHeight="30.0" prefWidth="180.0" text="Invest In New Property" />
-                  <Button fx:id="ButtonViewOwnedProperties" layoutX="44.0" layoutY="212.0" mnemonicParsing="false" onAction="#GoToViewOwnedProperties" prefHeight="30.0" prefWidth="180.0" text="View Owned Properties " />
-                  <Button fx:id="ButtonBank" layoutX="44.0" layoutY="265.0" mnemonicParsing="false" onAction="#GoToBank" prefHeight="30.0" prefWidth="180.0" text="The Bank" />
-                  <Button fx:id="ButtonLeaderboard" layoutX="44.0" layoutY="373.0" mnemonicParsing="false" onAction="#GoToLeaderboard" prefHeight="30.0" prefWidth="180.0" text="Leaderboard" />
-                  <Button fx:id="ButtonPropertyMarket" layoutX="44.0" layoutY="317.0" mnemonicParsing="false" onAction="#GoToPropertyMarket" prefHeight="30.0" prefWidth="180.0" text="Property Market" />
+                  <Button fx:id="ButtonInvestInNewProperty" layoutX="44.0" layoutY="240.0" mnemonicParsing="false" onAction="#GoToInvestInNewProperty" prefHeight="30.0" prefWidth="180.0" text="Invest In New Property" />
+                  <Button fx:id="ButtonViewOwnedProperties" layoutX="44.0" layoutY="297.0" mnemonicParsing="false" onAction="#GoToViewOwnedProperties" prefHeight="30.0" prefWidth="180.0" text="View Owned Properties " />
+                  <Button fx:id="ButtonBank" layoutX="44.0" layoutY="353.0" mnemonicParsing="false" onAction="#GoToBank" prefHeight="30.0" prefWidth="180.0" text="The Bank" />
+                  <Button fx:id="ButtonLeaderboard" layoutX="44.0" layoutY="609.0" mnemonicParsing="false" onAction="#GoToLeaderboard" prefHeight="30.0" prefWidth="180.0" text="Leaderboard" />
+                  <Button fx:id="ButtonPropertyMarket" layoutX="44.0" layoutY="417.0" mnemonicParsing="false" onAction="#GoToPropertyMarket" prefHeight="30.0" prefWidth="180.0" text="Property Market" />
                   <TextField fx:id="TextFieldHomePropertiesMarket" alignment="CENTER" editable="false" layoutX="388.0" layoutY="265.0" text=" - 3" />
                   <TextField fx:id="TextFieldOfficePropertiesMarket" alignment="CENTER" editable="false" layoutX="614.0" layoutY="265.0" text="+5" />
                   <Label layoutX="377.0" layoutY="215.0" text="Home Properties Market" textFill="WHITE">
@@ -120,14 +120,17 @@
                      <font>
                         <Font size="18.0" />
                      </font></Label>
-                  <TextField fx:id="TextFieldCurrentAmountDebt" alignment="CENTER" editable="false" layoutX="956.0" layoutY="373.0" text="X amount of debt" />
-                  <TextArea fx:id="TextAreaEventLog" layoutX="819.0" layoutY="441.0" prefHeight="200.0" prefWidth="300.0" />
-                  <Label layoutX="928.0" layoutY="407.0" text="EventLog" textFill="WHITE">
+                  <TextField fx:id="TextFieldCurrentAmountDebt" alignment="CENTER" editable="false" layoutX="956.0" layoutY="413.0" />
+                  <TextArea fx:id="TextAreaEventLog" layoutX="743.0" layoutY="540.0" prefHeight="200.0" prefWidth="427.0" />
+                  <Label layoutX="919.0" layoutY="506.0" text="EventLog" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
                   <TextField fx:id="TextFieldAge" alignment="CENTER" editable="false" layoutX="956.0" layoutY="281.0" text="Age" />
+                  <Label layoutX="1032.0" layoutY="384.0" prefHeight="33.0" prefWidth="35.0" text="Debt" textFill="WHITE" />
+                  <Label layoutX="1026.0" layoutY="322.0" text="Money" textFill="WHITE" />
+                  <Button layoutX="505.0" layoutY="479.0" mnemonicParsing="false" onAction="#houses" text="Button" />
                </children>
             </AnchorPane>
         </content>
@@ -176,10 +179,11 @@
                         <Font size="48.0" />
                      </font>
                   </Label>
-                  <Button fx:id="ButtonSell" layoutX="960.0" layoutY="286.0" mnemonicParsing="false" onAction="#SellProperty" prefHeight="30.0" prefWidth="180.0" text="Sell" />
-                  <Button fx:id="ButtonRenovate" layoutX="960.0" layoutY="226.0" mnemonicParsing="false" onAction="#RenovateBuilding" prefHeight="30.0" prefWidth="180.0" text="Renovate" />
+                  <Button fx:id="ButtonSell" layoutX="960.0" layoutY="310.0" mnemonicParsing="false" onAction="#SellProperty" prefHeight="30.0" prefWidth="180.0" text="Sell" />
+                  <Button fx:id="ButtonRenovate" layoutX="960.0" layoutY="214.0" mnemonicParsing="false" onAction="#RenovateBuilding" prefHeight="30.0" prefWidth="180.0" text="Renovate" />
                   <Button fx:id="ButtonOwnedPropertiesBack" layoutX="960.0" layoutY="685.0" mnemonicParsing="false" onAction="#GoToMainScreen" prefHeight="30.0" prefWidth="180.0" text="Back" />
                   <Button fx:id="ButtonConvert" layoutX="960.0" layoutY="164.0" mnemonicParsing="false" onAction="#ConvertBuilding" prefHeight="30.0" prefWidth="180.0" text="Convert " />
+                  <Button fx:id="ButtonOwnedPropertiesRepair" layoutX="960.0" layoutY="261.0" mnemonicParsing="false" onAction="#repairProperty" prefHeight="30.0" prefWidth="180.0" text="Repair" />
                </children></AnchorPane>
         </content>
       </Tab>
@@ -192,12 +196,12 @@
                         <Font size="48.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="TextFieldLoan1" layoutX="524.0" layoutY="189.0" />
-                  <TextField fx:id="TextFieldLoan2" layoutX="522.0" layoutY="377.0" />
-                  <TextField fx:id="TextFieldLoan3" layoutX="529.0" layoutY="563.0" />
-                  <Button fx:id="ButtonLoan1" layoutX="574.0" layoutY="243.0" mnemonicParsing="false" onAction="#BankLoan" text="Loan" />
-                  <Button fx:id="ButtonLoan2" layoutX="581.0" layoutY="428.0" mnemonicParsing="false" onAction="#BankLoan" text="Loan" />
-                  <Button fx:id="ButtonLoan3" layoutX="575.0" layoutY="612.0" mnemonicParsing="false" onAction="#BankLoan" text="Loan" />
+                  <TextField fx:id="TextFieldLoan1" alignment="CENTER" editable="false" layoutX="524.0" layoutY="189.0" />
+                  <TextField fx:id="TextFieldLoan2" alignment="CENTER" editable="false" layoutX="522.0" layoutY="377.0" />
+                  <TextField fx:id="TextFieldLoan3" alignment="CENTER" editable="false" layoutX="529.0" layoutY="563.0" />
+                  <Button fx:id="ButtonLoan1" alignment="CENTER" layoutX="574.0" layoutY="243.0" mnemonicParsing="false" onAction="#BankLoanOne" text="Loan" />
+                  <Button fx:id="ButtonLoan2" alignment="CENTER" layoutX="581.0" layoutY="428.0" mnemonicParsing="false" onAction="#BankLoanTwo" text="Loan" />
+                  <Button fx:id="ButtonLoan3" alignment="CENTER" layoutX="575.0" layoutY="612.0" mnemonicParsing="false" onAction="#BankLoanThree" text="Loan" />
                   <Button fx:id="ButtonBankBack" layoutX="1089.0" layoutY="693.0" mnemonicParsing="false" onAction="#GoToMainScreen" text="Back" />
                   <Label layoutX="583.0" layoutY="147.0" text="Loan 1" textFill="WHITE" />
                   <Label layoutX="582.0" layoutY="342.0" text="Loan 2" textFill="WHITE" />
