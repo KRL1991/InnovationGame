@@ -555,6 +555,15 @@ public class Controller {
        Image midTierHouse8 = new Image(new FileInputStream("src/housePictures/mid tier house 8.jpg"));
        Image midTierHouse9 = new Image(new FileInputStream("src/housePictures/mid tier house 9.jpg"));
        Image midTierHouse10 = new Image(new FileInputStream("src/housePictures/mid tier house 10.jpg"));
+       Image luxeryProperty1 = new Image(new FileInputStream("src/housePictures/Luxery property 1.jpg"));
+       Image luxeryProperty2 = new Image(new FileInputStream("src/housePictures/Luxery property 2.jpg"));
+       Image luxeryProperty3 = new Image(new FileInputStream("src/housePictures/Luxery property 3.jpg"));
+       Image luxeryProperty4 = new Image(new FileInputStream("src/housePictures/Luxery property 4.jpg"));
+       Image luxeryProperty5 = new Image(new FileInputStream("src/housePictures/Luxery property 5.jpg"));
+       Image luxeryProperty6 = new Image(new FileInputStream("src/housePictures/Luxery property 6.jpg"));
+       Image luxeryProperty7 = new Image(new FileInputStream("src/housePictures/Luxery property 7.jpg"));
+       Image luxeryProperty8 = new Image(new FileInputStream("src/housePictures/Luxery property 8.jpg"));
+       Image luxeryProperty9 = new Image(new FileInputStream("src/housePictures/Luxery property 9.jpg"));
 
 
        ArrayList<Image> housePicture = new ArrayList<>();
@@ -565,10 +574,61 @@ public class Controller {
        housePicture.add(lowEndHouse4);
        housePicture.add(lowEndHouse5);
        housePicture.add(lowEndHouse7);
-
-
+       housePicture.add(midTierHouse1);
+       housePicture.add(midTierHouse2);
+       housePicture.add(midTierHouse3);
+       housePicture.add(midTierHouse4);
+       housePicture.add(midTierHouse5);
+       housePicture.add(midTierHouse6);
+       housePicture.add(midTierHouse7);
+       housePicture.add(midTierHouse8);
+       housePicture.add(midTierHouse9);
+       housePicture.add(midTierHouse10);
+       housePicture.add(luxeryProperty1);
+       housePicture.add(luxeryProperty2);
+       housePicture.add(luxeryProperty3);
+       housePicture.add(luxeryProperty4);
+       housePicture.add(luxeryProperty5);
+       housePicture.add(luxeryProperty6);
+       housePicture.add(luxeryProperty7);
+       housePicture.add(luxeryProperty8);
+       housePicture.add(luxeryProperty9);
 
        System.out.println(housePicture.size());
+
+
+       ArrayList<Double> housePrices = new ArrayList<>();
+
+        housePrices.add(15000.00);
+        housePrices.add(20000.00);
+        housePrices.add(17250.00);
+        housePrices.add(23000.00);
+        housePrices.add(25200.00);
+        housePrices.add(23500.00);
+
+        housePrices.add(50000.00);
+        housePrices.add(55500.00);
+        housePrices.add(60250.00);
+        housePrices.add(58000.00);
+        housePrices.add(65000.00);
+        housePrices.add(62000.00);
+        housePrices.add(52000.00);
+        housePrices.add(60000.00);
+        housePrices.add(56500.00);
+        housePrices.add(64000.00);
+
+        housePrices.add(110000.00);
+        housePrices.add(125000.00);
+        housePrices.add(140000.00);
+        housePrices.add(145000.00);
+        housePrices.add(161000.00);
+        housePrices.add(115000.00);
+        housePrices.add(181000.00);
+        housePrices.add(128000.00);
+        housePrices.add(200000.00);
+
+       System.out.println(housePrices.size());
+
    }
 
     @FXML
