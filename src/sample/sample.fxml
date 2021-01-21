@@ -8,6 +8,8 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -15,7 +17,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@HideTabs.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@HideTabs.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
   <tabs>
     <Tab fx:id="TabWelcomeScreen" text="Welcome Screen">
       <content>
@@ -139,32 +141,35 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
                   <Button fx:id="ButtonNewProperties" layoutX="995.0" layoutY="686.0" mnemonicParsing="false" onAction="#GoToMainScreen" prefHeight="30.0" prefWidth="180.0" text="Back" />
-                  <ImageView fx:id="ImageViewNewPropertiesLeft" fitHeight="200.0" fitWidth="300.0" layoutX="70.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="ImageViewNewPropertiesLeft" fitHeight="200.0" fitWidth="300.0" layoutX="70.0" layoutY="93.0" pickOnBounds="true">
                      <image>
                         <Image url="@../Logo/realestate-logo-portfolio-1.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="ImageViewNewPropertiesMiddle" fitHeight="200.0" fitWidth="300.0" layoutX="450.0" layoutY="321.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="ImageViewNewPropertiesMiddle" fitHeight="200.0" fitWidth="300.0" layoutX="450.0" layoutY="321.0" pickOnBounds="true">
                      <image>
                         <Image url="@../Logo/realestate-logo-portfolio-1.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="ImageViewNewPropertiesRight" fitHeight="200.0" fitWidth="300.0" layoutX="785.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="ImageViewNewPropertiesRight" fitHeight="200.0" fitWidth="300.0" layoutX="785.0" layoutY="93.0" pickOnBounds="true">
                      <image>
                         <Image url="@../Logo/realestate-logo-portfolio-1.jpg" />
                      </image>
                   </ImageView>
-                  <Button fx:id="ButtonBuyLeft" layoutX="198.0" layoutY="365.0" mnemonicParsing="false" onAction="#BuyPropertiesLeft" text="Buy" />
-                  <Button fx:id="ButtonBuyMiddle" layoutX="578.0" layoutY="564.0" mnemonicParsing="false" onAction="#BuyPropertiesMiddle" text="Buy" />
-                  <Button fx:id="ButtonBuyRight" layoutX="931.0" layoutY="365.0" mnemonicParsing="false" onAction="#BuyPropertiesRight" text="Buy" />
-                  <TextField fx:id="NewPropertyLeftPrice" alignment="CENTER" editable="false" layoutX="127.0" layoutY="321.0" text="\$" />
-                  <TextField fx:id="NewPropertyMiddlePrice" alignment="CENTER" editable="false" layoutX="507.0" layoutY="524.0" text="\$" />
-                  <TextField fx:id="NewPropertyRightPrice" alignment="CENTER" editable="false" layoutX="860.0" layoutY="321.0" text="\$" />
+                  <Button fx:id="ButtonBuyLeft" layoutX="198.0" layoutY="385.0" mnemonicParsing="false" onAction="#BuyPropertiesLeft" text="Buy" />
+                  <Button fx:id="ButtonBuyMiddle" layoutX="578.0" layoutY="616.0" mnemonicParsing="false" onAction="#BuyPropertiesMiddle" text="Buy" />
+                  <Button fx:id="ButtonBuyRight" layoutX="913.0" layoutY="394.0" mnemonicParsing="false" onAction="#BuyPropertiesRight" text="Buy" />
+                  <TextField fx:id="NewPropertyLeftPrice" alignment="CENTER" editable="false" layoutX="127.0" layoutY="350.0" text="\$" />
+                  <TextField fx:id="NewPropertyMiddlePrice" alignment="CENTER" editable="false" layoutX="507.0" layoutY="576.0" text="\$" />
+                  <TextField fx:id="NewPropertyRightPrice" alignment="CENTER" editable="false" layoutX="842.0" layoutY="354.0" text="\$" />
                   <Label layoutX="416.0" layoutY="58.0" text="New Properties" textFill="WHITE">
                      <font>
                         <Font size="48.0" />
                      </font>
                   </Label>
+                  <TextField fx:id="TextFieldNewPropertiesNameLeft" alignment="CENTER" editable="false" layoutX="127.0" layoutY="311.0" />
+                  <TextField fx:id="TextFieldNewPropertiesNameMiddle" alignment="CENTER" editable="false" layoutX="507.0" layoutY="534.0" />
+                  <TextField fx:id="TextFieldNewPropertiesNameRight" alignment="CENTER" editable="false" layoutX="842.0" layoutY="311.0" />
                </children></AnchorPane>
         </content>
       </Tab>
@@ -172,7 +177,6 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
-                  <ListView fx:id="ListViewOwnedProperties" layoutX="37.0" layoutY="131.0" prefHeight="500.0" prefWidth="350.0" />
                   <Label layoutX="410.0" layoutY="39.0" text="Owned Properties" textFill="WHITE">
                      <font>
                         <Font size="48.0" />
@@ -183,6 +187,12 @@
                   <Button fx:id="ButtonOwnedPropertiesBack" layoutX="960.0" layoutY="685.0" mnemonicParsing="false" onAction="#GoToMainScreen" prefHeight="30.0" prefWidth="180.0" text="Back" />
                   <Button fx:id="ButtonConvert" layoutX="960.0" layoutY="164.0" mnemonicParsing="false" onAction="#ConvertBuilding" prefHeight="30.0" prefWidth="180.0" text="Convert " />
                   <Button fx:id="ButtonOwnedPropertiesRepair" layoutX="960.0" layoutY="261.0" mnemonicParsing="false" onAction="#repairProperty" prefHeight="30.0" prefWidth="180.0" text="Repair" />
+                  <TableView fx:id="TableListOfOwnedProperties" layoutX="25.0" layoutY="130.0" prefHeight="555.0" prefWidth="523.0">
+                    <columns>
+                      <TableColumn fx:id="ListViewOwnedPropertiesProperty" prefWidth="251.0" text="Property" />
+                      <TableColumn fx:id="ListViewOwnedPropertiesPrice" minWidth="0.0" prefWidth="269.0" text="Price" />
+                    </columns>
+                  </TableView>
                </children></AnchorPane>
         </content>
       </Tab>

@@ -1,20 +1,21 @@
 package sample;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.chart.LineChart;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-import javax.imageio.stream.ImageInputStream;
-import javax.management.monitor.CounterMonitor;
+import java.awt.*;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.InputStream;
-import java.math.BigDecimal;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -25,10 +26,11 @@ public class Controller {
     int counter;
 
 
-    ArrayList<Image> arrayName = new ArrayList<Image>();
+ArrayList<String> ownedProperties = new ArrayList<>();
+ArrayList<String> ownedPropertiesPrice = new ArrayList<>();
 
-
-    //ArrayList propertyPrices = new ArrayList();
+    ObservableList<String> observableListOwnedProperties = FXCollections.observableList(ownedProperties);
+    ObservableList<String> observableListOwnedPropertiesPrice = FXCollections.observableList(ownedPropertiesPrice);
 
 
 
@@ -150,7 +152,6 @@ public class Controller {
     @FXML
     private TextField TextFieldEnterAge;
 
-
     @FXML
     private TextField TextFieldName;
 
@@ -172,7 +173,6 @@ public class Controller {
     @FXML
     private TextField TextFieldLoan1;
 
-
     @FXML
     private TextField TextFieldLoan2;
 
@@ -191,6 +191,15 @@ public class Controller {
     @FXML
     private TextField NewPropertyRightPrice;
 
+    @FXML
+    private TextField TextFieldNewPropertiesNameLeft;
+
+    @FXML
+    private TextField TextFieldNewPropertiesNameMiddle;
+
+    @FXML
+    private TextField TextFieldNewPropertiesNameRight;
+
 
     // TextArea -------------------------------------------------------------
     @FXML
@@ -199,7 +208,7 @@ public class Controller {
    // Misc -------------------------------------------------------------
 
     @FXML
-    private ListView<?> ListViewOwnedProperties;
+    private ListView<String> ListViewOwnedProperties;
 
     @FXML
     private LineChart<?, ?> LineChartHome;
@@ -209,6 +218,17 @@ public class Controller {
 
     @FXML
     private ListView<?> ListViewLeaderboard;
+
+    @FXML
+    private TableView<String> TableListOfOwnedProperties;
+
+
+    @FXML
+    private TableColumn<?, ?> ListViewOwnedPropertiesProperty;
+
+    @FXML
+    private TableColumn<?, ?> ListViewOwnedPropertiesPrice;
+
 
    // Tabs -------------------------------------------------------------
 
@@ -254,6 +274,25 @@ public class Controller {
 
     currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
 
+    String name = TextFieldNewPropertiesNameLeft.getText();
+    String propertyPrice = String.valueOf(NewPropertyLeftPrice.getText());
+
+
+
+
+    ownedProperties.add(name);
+    ownedPropertiesPrice.add(String.valueOf(Integer.valueOf(propertyPrice)));
+
+    /* ListViewOwnedProperties.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+    ListViewOwnedProperties.setItems(observableListOwnedProperties);
+    ListViewOwnedProperties.setItems(observableListOwnedPropertiesPrice);
+   */
+        System.out.println(observableListOwnedProperties);
+        System.out.println(observableListOwnedPropertiesPrice);
+
+
+
+
         tabPane.getSelectionModel().select(TabMainScreen);
         //TODO If player doesn't have enough money they can't buy the property
     }
@@ -269,6 +308,12 @@ public class Controller {
 
         currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
 
+        String name = TextFieldNewPropertiesNameMiddle.getText();
+        int propertyPrice = Integer.parseInt(NewPropertyMiddlePrice.getText());
+
+        ownedProperties.add(name);
+        ownedPropertiesPrice.add(String.valueOf(propertyPrice));
+
         tabPane.getSelectionModel().select(TabMainScreen);
 
     }
@@ -283,6 +328,12 @@ public class Controller {
         TextFieldCurrentAmountMoney.setText(String.valueOf(updatedAmountOfMoney));
 
         currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
+
+        String name = TextFieldNewPropertiesNameRight.getText();
+        int propertyPrice = Integer.parseInt(NewPropertyLeftPrice.getText());
+
+        ownedProperties.add(name);
+        ownedPropertiesPrice.add(String.valueOf(propertyPrice));
 
         tabPane.getSelectionModel().select(TabMainScreen);
     }
@@ -510,7 +561,7 @@ public class Controller {
        housePicture.add(luxeryProperty8);
        housePicture.add(luxeryProperty9);
 
-       System.out.println(housePicture.size());
+
 
 
        ArrayList<Integer> housePrices = new ArrayList<>();
@@ -543,20 +594,54 @@ public class Controller {
        housePrices.add(128000);
        housePrices.add(200000);
 
-       System.out.println(housePrices.size());
+
+
+
+ArrayList<String> propertyNames = new ArrayList<>();
+
+       propertyNames.add("Low end house 1");
+       propertyNames.add("Low end house 2");
+       propertyNames.add("Low end house 3");
+       propertyNames.add("Low end house 4");
+       propertyNames.add("Low end house 5");
+       propertyNames.add("Low end house 7");
+
+       propertyNames.add("Medium tier house 1");
+       propertyNames.add("Medium tier house 2");
+       propertyNames.add("Medium tier house 3");
+       propertyNames.add("Medium tier house 4");
+       propertyNames.add("Medium tier house 5");
+       propertyNames.add("Medium tier house 6");
+       propertyNames.add("Medium tier house 7");
+       propertyNames.add("Medium tier house 8");
+       propertyNames.add("Medium tier house 9");
+       propertyNames.add("Medium tier house 10");
+
+       propertyNames.add("Luxery property house 1");
+       propertyNames.add("Luxery property house 2");
+       propertyNames.add("Luxery property house 3");
+       propertyNames.add("Luxery property house 4");
+       propertyNames.add("Luxery property house 5");
+       propertyNames.add("Luxery property house 6");
+       propertyNames.add("Luxery property house 7");
+       propertyNames.add("Luxery property house 8");
+       propertyNames.add("Luxery property house 9");
+
 
        double randomIndexLeft = Math.random()*25;
        ImageViewNewPropertiesLeft.setImage(housePicture.get((int)randomIndexLeft));
        NewPropertyLeftPrice.setText(String.valueOf(housePrices.get((int) randomIndexLeft)));
+       TextFieldNewPropertiesNameLeft.setText(propertyNames.get((int) randomIndexLeft));
 
        double randomIndexMiddle = Math.random()*25;
        ImageViewNewPropertiesMiddle.setImage(housePicture.get((int)randomIndexMiddle));
        NewPropertyMiddlePrice.setText(String.valueOf(housePrices.get((int) randomIndexMiddle)));
+       TextFieldNewPropertiesNameMiddle.setText(String.valueOf(propertyNames.get((int) randomIndexMiddle)));
 
        double randomIndexRight = Math.random()*25;
        ImageViewNewPropertiesRight.setImage(housePicture.get((int)randomIndexRight));
        NewPropertyRightPrice.setText(String.valueOf(housePrices.get((int) randomIndexRight)));
-
+       TextFieldNewPropertiesNameRight.setText(String.valueOf(propertyNames.get((int) randomIndexRight)));
 
 
 
@@ -592,6 +677,8 @@ public class Controller {
    @FXML
    void GoToViewOwnedProperties(ActionEvent event) {
       tabPane.getSelectionModel().select(TabOwnedProperties);
+
+
    }
 
    @FXML
@@ -656,7 +743,11 @@ public class Controller {
         events.add("A big fire has destroyed most of the interior in one of your properties\nits income will be suspended until repaired");
 
         Collections.shuffle(events);
-        TextAreaEventLog.appendText(events.get(5));
+        if (counter > 5) {
+            TextAreaEventLog.appendText(events.get(5));
+
+        } else TextAreaEventLog.appendText("Nothing interesting happened");
+
 
 
 
@@ -669,12 +760,8 @@ public class Controller {
         TextFieldOfficePropertiesMarket.setText((String.valueOf(updatedOfficeMarket)));
 
         } else TextAreaEventLog.appendText("hello");
+}
 
-
-
-
-
-    }
 
     @FXML
     void repairProperty(ActionEvent event) {
