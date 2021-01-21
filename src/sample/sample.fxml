@@ -189,8 +189,8 @@
                   <Button fx:id="ButtonOwnedPropertiesRepair" layoutX="960.0" layoutY="261.0" mnemonicParsing="false" onAction="#repairProperty" prefHeight="30.0" prefWidth="180.0" text="Repair" />
                   <TableView fx:id="TableListOfOwnedProperties" layoutX="25.0" layoutY="130.0" prefHeight="555.0" prefWidth="523.0">
                     <columns>
-                      <TableColumn fx:id="ListViewOwnedPropertiesProperty" prefWidth="251.0" text="Property" />
-                      <TableColumn fx:id="ListViewOwnedPropertiesPrice" minWidth="0.0" prefWidth="269.0" text="Price" />
+                      <TableColumn fx:id="tableName" prefWidth="251.0" text="Property" />
+                      <TableColumn fx:id="tablePrice" minWidth="0.0" prefWidth="269.0" text="Price" />
                     </columns>
                   </TableView>
                </children></AnchorPane>

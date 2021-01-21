@@ -1,5 +1,6 @@
 package sample;
 
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,11 +10,9 @@ import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-
-import java.awt.*;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -22,22 +21,96 @@ import java.util.Collections;
 public class Controller {
     int currentAmountMoneyInt;
     String currentAmount;
-
     int counter;
+    int randomIndexLeft = 0;
+    int randomIndexRight = 0;
+    int randomIndexMiddle = 0;
+
+    static ArrayList<Properties> houses = new ArrayList<>();
+
+    static ArrayList<Properties> ownedProperties = new ArrayList<>();
+
+    ObservableList<Properties> observableListOwnedProperties = FXCollections.observableList(ownedProperties);
+    ObservableList<Properties> observableListHouses;
+
+    @FXML
+    public TableView<Properties> TableListOfOwnedProperties;
+
+    @FXML
+    public TableColumn<Properties, String> tableName;
+
+    @FXML
+    public TableColumn<Properties, Integer> tablePrice;
+
+    public void initialize() throws FileNotFoundException {
+
+        tableName.setCellValueFactory(new PropertyValueFactory<>("Name"));
+        tablePrice.setCellValueFactory(new PropertyValueFactory<>("Price"));
+
+        Image lowEndHouse1 = new Image(new FileInputStream("src/housePictures/low end house 1.jpg"));
+        Image lowEndHouse2 = new Image(new FileInputStream("src/housePictures/low end house 2.jpeg"));
+        Image lowEndHouse3 = new Image(new FileInputStream("src/housePictures/low end house 3.jpeg"));
+        Image lowEndHouse4 = new Image(new FileInputStream("src/housePictures/low end house 4.jpeg"));
+        Image lowEndHouse5 = new Image(new FileInputStream("src/housePictures/low end house 5.jpg"));
+        Image lowEndHouse7 = new Image(new FileInputStream("src/housePictures/low end house 7.jpg"));
+
+        Image midTierHouse1 = new Image(new FileInputStream("src/housePictures/mid tier house 1.jpg"));
+        Image midTierHouse2 = new Image(new FileInputStream("src/housePictures/mid tier house 2.jpg"));
+        Image midTierHouse3 = new Image(new FileInputStream("src/housePictures/mid tier house 3.jpg"));
+        Image midTierHouse4 = new Image(new FileInputStream("src/housePictures/mid tier house 4.jpg"));
+        Image midTierHouse5 = new Image(new FileInputStream("src/housePictures/mid tier house 5.jpg"));
+        Image midTierHouse6 = new Image(new FileInputStream("src/housePictures/mid tier house 6.jpg"));
+        Image midTierHouse7 = new Image(new FileInputStream("src/housePictures/mid tier house 7.jpg"));
+        Image midTierHouse8 = new Image(new FileInputStream("src/housePictures/mid tier house 8.jpg"));
+        Image midTierHouse9 = new Image(new FileInputStream("src/housePictures/mid tier house 9.jpg"));
+        Image midTierHouse10 = new Image(new FileInputStream("src/housePictures/mid tier house 10.jpg"));
+
+        Image luxeryProperty1 = new Image(new FileInputStream("src/housePictures/Luxery property 1.jpg"));
+        Image luxeryProperty2 = new Image(new FileInputStream("src/housePictures/Luxery property 2.jpg"));
+        Image luxeryProperty3 = new Image(new FileInputStream("src/housePictures/Luxery property 3.jpg"));
+        Image luxeryProperty4 = new Image(new FileInputStream("src/housePictures/Luxery property 4.jpg"));
+        Image luxeryProperty5 = new Image(new FileInputStream("src/housePictures/Luxery property 5.jpg"));
+        Image luxeryProperty6 = new Image(new FileInputStream("src/housePictures/Luxery property 6.jpg"));
+        Image luxeryProperty7 = new Image(new FileInputStream("src/housePictures/Luxery property 7.jpg"));
+        Image luxeryProperty8 = new Image(new FileInputStream("src/housePictures/Luxery property 8.jpg"));
+        Image luxeryProperty9 = new Image(new FileInputStream("src/housePictures/Luxery property 9.jpg"));
 
 
-ArrayList<String> ownedProperties = new ArrayList<>();
-ArrayList<String> ownedPropertiesPrice = new ArrayList<>();
+        houses.add(new Properties("Low end house 1", 15000, lowEndHouse1));
+        houses.add(new Properties("Low end house 2", 20000, lowEndHouse2));
+        houses.add(new Properties("Low end house 3", 17250, lowEndHouse3));
+        houses.add(new Properties("Low end house 4", 23000, lowEndHouse4));
+        houses.add(new Properties("Low end house 5", 25200, lowEndHouse5));
+        houses.add(new Properties("Low end house 7", 23500, lowEndHouse7));
 
-    ObservableList<String> observableListOwnedProperties = FXCollections.observableList(ownedProperties);
-    ObservableList<String> observableListOwnedPropertiesPrice = FXCollections.observableList(ownedPropertiesPrice);
+        houses.add(new Properties("Medium tier house 1", 50000, midTierHouse1));
+        houses.add(new Properties("Medium tier house 2", 55500, midTierHouse2));
+        houses.add(new Properties("Medium tier house 3", 60250, midTierHouse3));
+        houses.add(new Properties("Medium tier house 4", 58000, midTierHouse4));
+        houses.add(new Properties("Medium tier house 5", 65000, midTierHouse5));
+        houses.add(new Properties("Medium tier house 6", 62000, midTierHouse6));
+        houses.add(new Properties("Medium tier house 7", 52000, midTierHouse7));
+        houses.add(new Properties("Medium tier house 8", 60000, midTierHouse8));
+        houses.add(new Properties("Medium tier house 9", 56500, midTierHouse9));
+        houses.add(new Properties("Medium tier house 10", 64000, midTierHouse10));
 
+        houses.add(new Properties("Luxery house 1", 110000, luxeryProperty1));
+        houses.add(new Properties("Luxery house 2", 125000, luxeryProperty2));
+        houses.add(new Properties("Luxery house 3", 140000, luxeryProperty3));
+        houses.add(new Properties("Luxery house 4", 145000, luxeryProperty4));
+        houses.add(new Properties("Luxery house 5", 161000, luxeryProperty5));
+        houses.add(new Properties("Luxery house 6", 115000, luxeryProperty6));
+        houses.add(new Properties("Luxery house 7", 181000, luxeryProperty7));
+        houses.add(new Properties("Luxery house 8", 128000, luxeryProperty8));
+        houses.add(new Properties("Luxery house 9", 200000, luxeryProperty9));
 
+        observableListHouses = FXCollections.observableList(houses);
+    }
 
     @FXML
     private TabPane tabPane;
 
- // Buttons -------------------------------------------------------------
+    // Buttons -------------------------------------------------------------
     @FXML
     private Button welcomeScreenStartButton;
 
@@ -125,9 +198,6 @@ ArrayList<String> ownedPropertiesPrice = new ArrayList<>();
     private Button ButtonOwnedPropertiesRepair;
 
 
-
-
-
     // Imageviews -------------------------------------------------------------
     @FXML
     private ImageView ImageViewWelcomeScreenLogo;
@@ -205,7 +275,7 @@ ArrayList<String> ownedPropertiesPrice = new ArrayList<>();
     @FXML
     private TextArea TextAreaEventLog;
 
-   // Misc -------------------------------------------------------------
+    // Misc -------------------------------------------------------------
 
     @FXML
     private ListView<String> ListViewOwnedProperties;
@@ -219,45 +289,35 @@ ArrayList<String> ownedPropertiesPrice = new ArrayList<>();
     @FXML
     private ListView<?> ListViewLeaderboard;
 
-    @FXML
-    private TableView<String> TableListOfOwnedProperties;
 
-
-    @FXML
-    private TableColumn<?, ?> ListViewOwnedPropertiesProperty;
+    // Tabs -------------------------------------------------------------
 
     @FXML
-    private TableColumn<?, ?> ListViewOwnedPropertiesPrice;
+    private Tab TabWelcomeScreen;
 
+    @FXML
+    private Tab TabDifficultyScreen;
 
-   // Tabs -------------------------------------------------------------
+    @FXML
+    private Tab TabCreateInvestor;
 
-   @FXML
-   private Tab TabWelcomeScreen;
+    @FXML
+    private Tab TabMainScreen;
 
-   @FXML
-   private Tab TabDifficultyScreen;
+    @FXML
+    private Tab TabOwnedProperties;
 
-   @FXML
-   private Tab TabCreateInvestor;
+    @FXML
+    private Tab TabBank;
 
-   @FXML
-   private Tab TabMainScreen;
+    @FXML
+    private Tab TabPropertyMarket;
 
-   @FXML
-   private Tab TabOwnedProperties;
+    @FXML
+    private Tab TabLeaderboard;
 
-   @FXML
-   private Tab TabBank;
-
-   @FXML
-   private Tab TabPropertyMarket;
-
-   @FXML
-   private Tab TabLeaderboard;
-
-   @FXML
-   private Tab TabNewProperties;
+    @FXML
+    private Tab TabNewProperties;
 
 
 // Methods
@@ -266,35 +326,22 @@ ArrayList<String> ownedPropertiesPrice = new ArrayList<>();
     @FXML
     void BuyPropertiesLeft(ActionEvent event) {
 
-    int housePrice = Integer.parseInt(NewPropertyLeftPrice.getText());
+        int housePrice = Integer.parseInt(NewPropertyLeftPrice.getText());
 
-    int updatedAmountOfMoney = currentAmountMoneyInt - housePrice;
+        int updatedAmountOfMoney = currentAmountMoneyInt - housePrice;
 
-    TextFieldCurrentAmountMoney.setText(String.valueOf(updatedAmountOfMoney));
+        TextFieldCurrentAmountMoney.setText(String.valueOf(updatedAmountOfMoney));
 
-    currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
+        currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
 
-    String name = TextFieldNewPropertiesNameLeft.getText();
-    String propertyPrice = String.valueOf(NewPropertyLeftPrice.getText());
-
+        ownedProperties.add(houses.get(randomIndexLeft));
 
 
-
-    ownedProperties.add(name);
-    ownedPropertiesPrice.add(String.valueOf(Integer.valueOf(propertyPrice)));
-
-    /* ListViewOwnedProperties.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-    ListViewOwnedProperties.setItems(observableListOwnedProperties);
-    ListViewOwnedProperties.setItems(observableListOwnedPropertiesPrice);
-   */
-        System.out.println(observableListOwnedProperties);
-        System.out.println(observableListOwnedPropertiesPrice);
-
-
-
+        TableListOfOwnedProperties.setItems(observableListOwnedProperties);
+        TableListOfOwnedProperties.refresh();
 
         tabPane.getSelectionModel().select(TabMainScreen);
-        //TODO If player doesn't have enough money they can't buy the property
+
     }
 
     @FXML
@@ -308,11 +355,11 @@ ArrayList<String> ownedPropertiesPrice = new ArrayList<>();
 
         currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
 
-        String name = TextFieldNewPropertiesNameMiddle.getText();
-        int propertyPrice = Integer.parseInt(NewPropertyMiddlePrice.getText());
 
-        ownedProperties.add(name);
-        ownedPropertiesPrice.add(String.valueOf(propertyPrice));
+        ownedProperties.add(houses.get(randomIndexMiddle));
+
+        TableListOfOwnedProperties.setItems(observableListOwnedProperties);
+        TableListOfOwnedProperties.refresh();
 
         tabPane.getSelectionModel().select(TabMainScreen);
 
@@ -329,53 +376,46 @@ ArrayList<String> ownedPropertiesPrice = new ArrayList<>();
 
         currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
 
-        String name = TextFieldNewPropertiesNameRight.getText();
-        int propertyPrice = Integer.parseInt(NewPropertyLeftPrice.getText());
+        ownedProperties.add(houses.get(randomIndexRight));
 
-        ownedProperties.add(name);
-        ownedPropertiesPrice.add(String.valueOf(propertyPrice));
+        TableListOfOwnedProperties.setItems(observableListOwnedProperties);
+        TableListOfOwnedProperties.refresh();
 
         tabPane.getSelectionModel().select(TabMainScreen);
     }
 
-   @FXML
-   void ConvertBuilding(ActionEvent event) {
+    @FXML
+    void ConvertBuilding(ActionEvent event) {
 
-   }
+    }
 
-   @FXML
-   void CreateInvestorChooseGender(ActionEvent event) {
+    @FXML
+    void CreateInvestorChooseGender(ActionEvent event) {
 
-       String name = TextFieldCreateName.getText();
+        String name = TextFieldCreateName.getText();
 
-       TextFieldName.clear();
-       TextFieldName.setText(name);
+        TextFieldName.clear();
+        TextFieldName.setText(name);
 
-       /*InputStream inputStream = getClass().getResourceAsStream("Logo/businessMan.png");
-       Image male = new Image(inputStream);
-       ImageView image = new ImageView(male);
+    }
 
-       ImageviewInvesterOfficeAvatar.setImage(male);
-       */
+    @FXML
+    void GoToBank(ActionEvent event) {
+        tabPane.getSelectionModel().select(TabBank);
 
-   }
+        int loanOne = 10000;
 
-   @FXML
-   void GoToBank(ActionEvent event) {
-      tabPane.getSelectionModel().select(TabBank);
+        TextFieldLoan1.setText("10.000 $");
 
-       int loanOne = 10000;
+        double loanTwo = 40000;
 
-       TextFieldLoan1.setText("10.000 $");
+        TextFieldLoan2.setText("40.000 $");
 
-       double loanTwo = 40000;
+        double loanThree = 100000;
 
-       TextFieldLoan2.setText("40.000 $");
+        TextFieldLoan3.setText("100.000 $");
+    }
 
-       double loanThree = 100000;
-
-       TextFieldLoan3.setText("100.000 $");
-   }
     @FXML
     void BankLoanOne(ActionEvent event) {
         TextFieldCurrentAmountMoney.getText();
@@ -455,273 +495,149 @@ ArrayList<String> ownedPropertiesPrice = new ArrayList<>();
 
 // Difficulty Screen ----------------------------------------------------------
 
-   @FXML
-   void GoToCreateInvestorEasy(ActionEvent event) {
-      tabPane.getSelectionModel().select(TabCreateInvestor);
+    @FXML
+    void GoToCreateInvestorEasy(ActionEvent event) {
+        tabPane.getSelectionModel().select(TabCreateInvestor);
 
-       TextFieldCurrentAmountMoney.clear();
-       TextFieldCurrentAmountMoney.setText("100000");
-       currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
-       //TextFieldCurrentAmountMoney.appendText("$");
-       TextFieldCurrentAmountDebt.clear();
-       TextFieldCurrentAmountDebt.setText("0");
-   }
+        TextFieldCurrentAmountMoney.clear();
+        TextFieldCurrentAmountMoney.setText("100000");
+        currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
 
-   @FXML
-   void GoToCreateInvestorHard(ActionEvent event) {
-      tabPane.getSelectionModel().select(TabCreateInvestor);
+        TextFieldCurrentAmountDebt.clear();
+        TextFieldCurrentAmountDebt.setText("0");
+    }
 
-       TextFieldCurrentAmountMoney.clear();
-       TextFieldCurrentAmountMoney.setText("50000");
-       currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
-      // TextFieldCurrentAmountMoney.appendText("$");
-       TextFieldCurrentAmountDebt.clear();
-       TextFieldCurrentAmountDebt.setText("0");
-   }
+    @FXML
+    void GoToCreateInvestorHard(ActionEvent event) {
+        tabPane.getSelectionModel().select(TabCreateInvestor);
 
-   @FXML
-   void GoToCreateInvestorMedium(ActionEvent event) {
-      tabPane.getSelectionModel().select(TabCreateInvestor);
+        TextFieldCurrentAmountMoney.clear();
+        TextFieldCurrentAmountMoney.setText("50000");
+        currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
 
-       TextFieldCurrentAmountMoney.clear();
-       TextFieldCurrentAmountMoney.setText("75000");
-       currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
-       //TextFieldCurrentAmountMoney.appendText("$");
-       TextFieldCurrentAmountDebt.clear();
-       TextFieldCurrentAmountDebt.setText("0");
+        TextFieldCurrentAmountDebt.clear();
+        TextFieldCurrentAmountDebt.setText("0");
+    }
+
+    @FXML
+    void GoToCreateInvestorMedium(ActionEvent event) {
+        tabPane.getSelectionModel().select(TabCreateInvestor);
+
+        TextFieldCurrentAmountMoney.clear();
+        TextFieldCurrentAmountMoney.setText("75000");
+        currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
+
+        TextFieldCurrentAmountDebt.clear();
+        TextFieldCurrentAmountDebt.setText("0");
 
 
-   }
+    }
 
-   @FXML
-   void GoToDifficultyScreen(ActionEvent event) {
-      tabPane.getSelectionModel().select(TabDifficultyScreen);
+    @FXML
+    void GoToDifficultyScreen(ActionEvent event) {
+        tabPane.getSelectionModel().select(TabDifficultyScreen);
 
-   }
+    }
 // .....
 
-   @FXML
-   void GoToInvestInNewProperty(ActionEvent event) throws FileNotFoundException {
-      tabPane.getSelectionModel().select(TabNewProperties);
-
-       Image lowEndHouse1 = new Image(new FileInputStream("src/housePictures/low end house 1.jpg"));
-       Image lowEndHouse2 = new Image(new FileInputStream("src/housePictures/low end house 2.jpeg"));
-       Image lowEndHouse3 = new Image(new FileInputStream("src/housePictures/low end house 3.jpeg"));
-       Image lowEndHouse4 = new Image(new FileInputStream("src/housePictures/low end house 4.jpeg"));
-       Image lowEndHouse5 = new Image(new FileInputStream("src/housePictures/low end house 5.jpg"));
-       Image lowEndHouse7 = new Image(new FileInputStream("src/housePictures/low end house 7.jpg"));
-
-       Image midTierHouse1 = new Image(new FileInputStream("src/housePictures/mid tier house 1.jpg"));
-       Image midTierHouse2 = new Image(new FileInputStream("src/housePictures/mid tier house 2.jpg"));
-       Image midTierHouse3 = new Image(new FileInputStream("src/housePictures/mid tier house 3.jpg"));
-       Image midTierHouse4 = new Image(new FileInputStream("src/housePictures/mid tier house 4.jpg"));
-       Image midTierHouse5 = new Image(new FileInputStream("src/housePictures/mid tier house 5.jpg"));
-       Image midTierHouse6 = new Image(new FileInputStream("src/housePictures/mid tier house 6.jpg"));
-       Image midTierHouse7 = new Image(new FileInputStream("src/housePictures/mid tier house 7.jpg"));
-       Image midTierHouse8 = new Image(new FileInputStream("src/housePictures/mid tier house 8.jpg"));
-       Image midTierHouse9 = new Image(new FileInputStream("src/housePictures/mid tier house 9.jpg"));
-       Image midTierHouse10 = new Image(new FileInputStream("src/housePictures/mid tier house 10.jpg"));
-
-       Image luxeryProperty1 = new Image(new FileInputStream("src/housePictures/Luxery property 1.jpg"));
-       Image luxeryProperty2 = new Image(new FileInputStream("src/housePictures/Luxery property 2.jpg"));
-       Image luxeryProperty3 = new Image(new FileInputStream("src/housePictures/Luxery property 3.jpg"));
-       Image luxeryProperty4 = new Image(new FileInputStream("src/housePictures/Luxery property 4.jpg"));
-       Image luxeryProperty5 = new Image(new FileInputStream("src/housePictures/Luxery property 5.jpg"));
-       Image luxeryProperty6 = new Image(new FileInputStream("src/housePictures/Luxery property 6.jpg"));
-       Image luxeryProperty7 = new Image(new FileInputStream("src/housePictures/Luxery property 7.jpg"));
-       Image luxeryProperty8 = new Image(new FileInputStream("src/housePictures/Luxery property 8.jpg"));
-       Image luxeryProperty9 = new Image(new FileInputStream("src/housePictures/Luxery property 9.jpg"));
+    @FXML
+    void GoToInvestInNewProperty(ActionEvent event) {
+        tabPane.getSelectionModel().select(TabNewProperties);
 
 
-       ArrayList<Image> housePicture = new ArrayList<>();
+        randomIndexLeft = (int) (Math.random() * 25);
+        ImageViewNewPropertiesLeft.setImage(houses.get(randomIndexLeft).getHouseImage());
+        NewPropertyLeftPrice.setText(String.valueOf(houses.get(randomIndexLeft).getPrice()));
+        TextFieldNewPropertiesNameLeft.setText(houses.get(randomIndexLeft).getName());
 
-       housePicture.add(lowEndHouse1);
-       housePicture.add(lowEndHouse2);
-       housePicture.add(lowEndHouse3);
-       housePicture.add(lowEndHouse4);
-       housePicture.add(lowEndHouse5);
-       housePicture.add(lowEndHouse7);
-       housePicture.add(midTierHouse1);
-       housePicture.add(midTierHouse2);
-       housePicture.add(midTierHouse3);
-       housePicture.add(midTierHouse4);
-       housePicture.add(midTierHouse5);
-       housePicture.add(midTierHouse6);
-       housePicture.add(midTierHouse7);
-       housePicture.add(midTierHouse8);
-       housePicture.add(midTierHouse9);
-       housePicture.add(midTierHouse10);
-       housePicture.add(luxeryProperty1);
-       housePicture.add(luxeryProperty2);
-       housePicture.add(luxeryProperty3);
-       housePicture.add(luxeryProperty4);
-       housePicture.add(luxeryProperty5);
-       housePicture.add(luxeryProperty6);
-       housePicture.add(luxeryProperty7);
-       housePicture.add(luxeryProperty8);
-       housePicture.add(luxeryProperty9);
+        randomIndexMiddle = (int) (Math.random() * 25);
+        ImageViewNewPropertiesMiddle.setImage(houses.get(randomIndexMiddle).getHouseImage());
+        NewPropertyMiddlePrice.setText(String.valueOf(houses.get(randomIndexMiddle).getPrice()));
+        TextFieldNewPropertiesNameMiddle.setText(String.valueOf(houses.get(randomIndexMiddle).getName()));
+
+        randomIndexRight = (int) (Math.random() * 25);
+        ImageViewNewPropertiesRight.setImage(houses.get(randomIndexRight).getHouseImage());
+        NewPropertyRightPrice.setText(String.valueOf(houses.get(randomIndexRight).getPrice()));
+        TextFieldNewPropertiesNameRight.setText(String.valueOf(houses.get(randomIndexRight).getName()));
 
 
+    }
+
+    @FXML
+    void GoToLeaderboard(ActionEvent event) {
+        tabPane.getSelectionModel().select(TabLeaderboard);
+
+    }
+
+    @FXML
+    void GoToMainScreen(ActionEvent event) {
+        tabPane.getSelectionModel().select(TabMainScreen);
+
+        String name = TextFieldCreateName.getText();
+        String age = TextFieldEnterAge.getText();
+
+        TextFieldName.clear();
+        TextFieldName.setText(name);
+
+        TextFieldAge.clear();
+        TextFieldAge.setText(age);
+
+    }
+
+    @FXML
+    void GoToPropertyMarket(ActionEvent event) {
+        tabPane.getSelectionModel().select(TabPropertyMarket);
+
+    }
+
+    @FXML
+    void GoToViewOwnedProperties(ActionEvent event) {
+        tabPane.getSelectionModel().select(TabOwnedProperties);
 
 
-       ArrayList<Integer> housePrices = new ArrayList<>();
+    }
 
-       housePrices.add(15000);
-       housePrices.add(20000);
-       housePrices.add(17250);
-       housePrices.add(23000);
-       housePrices.add(25200);
-       housePrices.add(23500);
+    @FXML
+    void LoadExistingData(ActionEvent event) {
 
-       housePrices.add(50000);
-       housePrices.add(55500);
-       housePrices.add(60250);
-       housePrices.add(58000);
-       housePrices.add(65000);
-       housePrices.add(62000);
-       housePrices.add(52000);
-       housePrices.add(60000);
-       housePrices.add(56500);
-       housePrices.add(64000);
+    }
 
-       housePrices.add(110000);
-       housePrices.add(125000);
-       housePrices.add(140000);
-       housePrices.add(145000);
-       housePrices.add(161000);
-       housePrices.add(115000);
-       housePrices.add(181000);
-       housePrices.add(128000);
-       housePrices.add(200000);
+    @FXML
+    void RenovateBuilding(ActionEvent event) {
 
+    }
 
+    @FXML
+    void SellProperty(ActionEvent event) {
 
-
-ArrayList<String> propertyNames = new ArrayList<>();
-
-       propertyNames.add("Low end house 1");
-       propertyNames.add("Low end house 2");
-       propertyNames.add("Low end house 3");
-       propertyNames.add("Low end house 4");
-       propertyNames.add("Low end house 5");
-       propertyNames.add("Low end house 7");
-
-       propertyNames.add("Medium tier house 1");
-       propertyNames.add("Medium tier house 2");
-       propertyNames.add("Medium tier house 3");
-       propertyNames.add("Medium tier house 4");
-       propertyNames.add("Medium tier house 5");
-       propertyNames.add("Medium tier house 6");
-       propertyNames.add("Medium tier house 7");
-       propertyNames.add("Medium tier house 8");
-       propertyNames.add("Medium tier house 9");
-       propertyNames.add("Medium tier house 10");
-
-       propertyNames.add("Luxery property house 1");
-       propertyNames.add("Luxery property house 2");
-       propertyNames.add("Luxery property house 3");
-       propertyNames.add("Luxery property house 4");
-       propertyNames.add("Luxery property house 5");
-       propertyNames.add("Luxery property house 6");
-       propertyNames.add("Luxery property house 7");
-       propertyNames.add("Luxery property house 8");
-       propertyNames.add("Luxery property house 9");
-
-
-       double randomIndexLeft = Math.random()*25;
-       ImageViewNewPropertiesLeft.setImage(housePicture.get((int)randomIndexLeft));
-       NewPropertyLeftPrice.setText(String.valueOf(housePrices.get((int) randomIndexLeft)));
-       TextFieldNewPropertiesNameLeft.setText(propertyNames.get((int) randomIndexLeft));
-
-       double randomIndexMiddle = Math.random()*25;
-       ImageViewNewPropertiesMiddle.setImage(housePicture.get((int)randomIndexMiddle));
-       NewPropertyMiddlePrice.setText(String.valueOf(housePrices.get((int) randomIndexMiddle)));
-       TextFieldNewPropertiesNameMiddle.setText(String.valueOf(propertyNames.get((int) randomIndexMiddle)));
-
-       double randomIndexRight = Math.random()*25;
-       ImageViewNewPropertiesRight.setImage(housePicture.get((int)randomIndexRight));
-       NewPropertyRightPrice.setText(String.valueOf(housePrices.get((int) randomIndexRight)));
-       TextFieldNewPropertiesNameRight.setText(String.valueOf(propertyNames.get((int) randomIndexRight)));
-
-
-
-   }
-
-   @FXML
-   void GoToLeaderboard(ActionEvent event) {
-      tabPane.getSelectionModel().select(TabLeaderboard);
-
-   }
-
-   @FXML
-   void GoToMainScreen(ActionEvent event) {
-      tabPane.getSelectionModel().select(TabMainScreen);
-
-       String name = TextFieldCreateName.getText();
-       String age = TextFieldEnterAge.getText();
-
-       TextFieldName.clear();
-       TextFieldName.setText(name);
-
-       TextFieldAge.clear();
-       TextFieldAge.setText(age);
-
-   }
-
-   @FXML
-   void GoToPropertyMarket(ActionEvent event) {
-      tabPane.getSelectionModel().select(TabPropertyMarket);
-
-   }
-
-   @FXML
-   void GoToViewOwnedProperties(ActionEvent event) {
-      tabPane.getSelectionModel().select(TabOwnedProperties);
-
-
-   }
-
-   @FXML
-   void LoadExistingData(ActionEvent event) {
-
-   }
-
-   @FXML
-   void RenovateBuilding(ActionEvent event) {
-
-   }
-
-   @FXML
-   void SellProperty(ActionEvent event) {
-
-   }
+    }
 
     @FXML
     void ButtonMainScreenEndDay(ActionEvent event) {
 
-       // Updates which day it is
-       TextFieldDayCounter.clear();
-       counter++;
-       TextFieldDayCounter.setText("Day: " + counter);
+        // Updates which day it is
+        TextFieldDayCounter.clear();
+        counter++;
+        TextFieldDayCounter.setText("Day: " + counter);
 
-       TextFieldHomePropertiesMarket.clear();
-       TextFieldOfficePropertiesMarket.clear();
-       TextAreaEventLog.clear();
-
-
-       // Updates Property Market
-       double randomHomeMarket = Math.random()* 20- 10;
-       randomHomeMarket = Math.round(randomHomeMarket);
-       TextFieldHomePropertiesMarket.setText(String.valueOf(randomHomeMarket));
-
-       double randomOfficeMarket = Math.random()* 20-10;
-       randomOfficeMarket = Math.round(randomOfficeMarket);
-       TextFieldOfficePropertiesMarket.setText(String.valueOf(randomOfficeMarket));
-
-       //TODO multiply the values with the property prices to increase or decrease its value
+        TextFieldHomePropertiesMarket.clear();
+        TextFieldOfficePropertiesMarket.clear();
+        TextAreaEventLog.clear();
 
 
-       //Eventlog on End Day
+        // Updates Property Market
+        double randomHomeMarket = Math.random() * 20 - 10;
+        randomHomeMarket = Math.round(randomHomeMarket);
+        TextFieldHomePropertiesMarket.setText(String.valueOf(randomHomeMarket));
+
+        double randomOfficeMarket = Math.random() * 20 - 10;
+        randomOfficeMarket = Math.round(randomOfficeMarket);
+        TextFieldOfficePropertiesMarket.setText(String.valueOf(randomOfficeMarket));
+
+        //TODO multiply the values with the property prices to increase or decrease its value
+
+
+        //Eventlog on End Day
 
         ArrayList<String> events = new ArrayList<>();
 
@@ -749,29 +665,26 @@ ArrayList<String> propertyNames = new ArrayList<>();
         } else TextAreaEventLog.appendText("Nothing interesting happened");
 
 
-
-
         boolean ans = events.contains("The property market is going well\n+to Home and Office market");
-        if (ans==true) {
-            double randomUpdate =  Math.random()*5;
-            int updatedMarket = (int) ((int)randomUpdate + randomHomeMarket);
-            int updatedOfficeMarket = (int) ((int)randomUpdate + randomOfficeMarket);
-        TextFieldHomePropertiesMarket.setText(String.valueOf(updatedMarket));
-        TextFieldOfficePropertiesMarket.setText((String.valueOf(updatedOfficeMarket)));
+        if (ans == true) {
+            double randomUpdate = Math.random() * 5;
+            int updatedMarket = (int) ((int) randomUpdate + randomHomeMarket);
+            int updatedOfficeMarket = (int) ((int) randomUpdate + randomOfficeMarket);
+            TextFieldHomePropertiesMarket.setText(String.valueOf(updatedMarket));
+            TextFieldOfficePropertiesMarket.setText((String.valueOf(updatedOfficeMarket)));
 
         } else TextAreaEventLog.appendText("hello");
-}
+    }
 
 
     @FXML
     void repairProperty(ActionEvent event) {
 
 
-
     }
 
 
-        }
+}
 
 
 

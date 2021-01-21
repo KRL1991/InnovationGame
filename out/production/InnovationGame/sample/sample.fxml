@@ -8,6 +8,8 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -175,7 +177,6 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
-                  <ListView fx:id="ListViewOwnedProperties" layoutX="37.0" layoutY="131.0" prefHeight="500.0" prefWidth="350.0" />
                   <Label layoutX="410.0" layoutY="39.0" text="Owned Properties" textFill="WHITE">
                      <font>
                         <Font size="48.0" />
@@ -186,6 +187,12 @@
                   <Button fx:id="ButtonOwnedPropertiesBack" layoutX="960.0" layoutY="685.0" mnemonicParsing="false" onAction="#GoToMainScreen" prefHeight="30.0" prefWidth="180.0" text="Back" />
                   <Button fx:id="ButtonConvert" layoutX="960.0" layoutY="164.0" mnemonicParsing="false" onAction="#ConvertBuilding" prefHeight="30.0" prefWidth="180.0" text="Convert " />
                   <Button fx:id="ButtonOwnedPropertiesRepair" layoutX="960.0" layoutY="261.0" mnemonicParsing="false" onAction="#repairProperty" prefHeight="30.0" prefWidth="180.0" text="Repair" />
+                  <TableView fx:id="TableListOfOwnedProperties" layoutX="25.0" layoutY="130.0" prefHeight="555.0" prefWidth="523.0">
+                    <columns>
+                      <TableColumn fx:id="tableName" prefWidth="251.0" text="Property" />
+                      <TableColumn fx:id="tablePrice" minWidth="0.0" prefWidth="269.0" text="Price" />
+                    </columns>
+                  </TableView>
                </children></AnchorPane>
         </content>
       </Tab>
