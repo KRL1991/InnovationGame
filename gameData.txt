@@ -1,0 +1,7 @@
+Day: 6
+Harald
+null
+50000
+0
+javafx.scene.image.Image@71e8834b
+[sample.Properties@303447cb]

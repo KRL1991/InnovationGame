@@ -13,10 +13,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
+
+import static java.lang.String.valueOf;
 
 public class Controller {
     int currentAmountMoneyInt;
@@ -25,6 +27,7 @@ public class Controller {
     int randomIndexLeft = 0;
     int randomIndexRight = 0;
     int randomIndexMiddle = 0;
+
 
     static ArrayList<Properties> houses = new ArrayList<>();
 
@@ -212,7 +215,7 @@ public class Controller {
     private ImageView ImageViewNewPropertiesRight;
 
     @FXML
-    private ImageView ImageviewInvesterOfficeAvatar;
+    public ImageView ImageviewInvesterOfficeAvatar;
 
     // Textfields -------------------------------------------------------------
 
@@ -223,13 +226,13 @@ public class Controller {
     private TextField TextFieldEnterAge;
 
     @FXML
-    private TextField TextFieldName;
+    public TextField TextFieldName;
 
     @FXML
-    private TextField TextFieldCurrentAmountMoney;
+    public TextField TextFieldCurrentAmountMoney;
 
     @FXML
-    private TextField TextFieldDayCounter;
+    public TextField TextFieldDayCounter;
 
     @FXML
     private TextField TextFieldHomePropertiesMarket;
@@ -238,7 +241,7 @@ public class Controller {
     private TextField TextFieldOfficePropertiesMarket;
 
     @FXML
-    private TextField TextFieldCurrentAmountDebt;
+    public TextField TextFieldCurrentAmountDebt;
 
     @FXML
     private TextField TextFieldLoan1;
@@ -250,7 +253,7 @@ public class Controller {
     private TextField TextFieldLoan3;
 
     @FXML
-    private TextField TextFieldAge;
+    public TextField TextFieldAge;
 
     @FXML
     private TextField NewPropertyLeftPrice;
@@ -330,7 +333,7 @@ public class Controller {
 
         int updatedAmountOfMoney = currentAmountMoneyInt - housePrice;
 
-        TextFieldCurrentAmountMoney.setText(String.valueOf(updatedAmountOfMoney));
+        TextFieldCurrentAmountMoney.setText(valueOf(updatedAmountOfMoney));
 
         currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
 
@@ -351,7 +354,7 @@ public class Controller {
 
         int updatedAmountOfMoney = currentAmountMoneyInt - housePrice;
 
-        TextFieldCurrentAmountMoney.setText(String.valueOf(updatedAmountOfMoney));
+        TextFieldCurrentAmountMoney.setText(valueOf(updatedAmountOfMoney));
 
         currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
 
@@ -372,7 +375,7 @@ public class Controller {
 
         int updatedAmountOfMoney = currentAmountMoneyInt - housePrice;
 
-        TextFieldCurrentAmountMoney.setText(String.valueOf(updatedAmountOfMoney));
+        TextFieldCurrentAmountMoney.setText(valueOf(updatedAmountOfMoney));
 
         currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
 
@@ -429,7 +432,7 @@ public class Controller {
 
         currentAmountMoneyInt = sum;
 
-        currentAmount = String.valueOf(currentAmountMoneyInt);
+        currentAmount = valueOf(currentAmountMoneyInt);
 
         TextFieldCurrentAmountMoney.setText(currentAmount);
 
@@ -437,7 +440,7 @@ public class Controller {
 
         sumDebt = debt + 10000;
 
-        TextFieldCurrentAmountDebt.setText(String.valueOf(sumDebt));
+        TextFieldCurrentAmountDebt.setText(valueOf(sumDebt));
 
         tabPane.getSelectionModel().select(TabMainScreen);
     }
@@ -455,7 +458,7 @@ public class Controller {
 
         currentAmountMoneyInt = sum3;
 
-        currentAmount = String.valueOf(currentAmountMoneyInt);
+        currentAmount = valueOf(currentAmountMoneyInt);
 
         TextFieldCurrentAmountMoney.setText(currentAmount);
 
@@ -463,7 +466,7 @@ public class Controller {
 
         sumDebt3 = debt + 100000;
 
-        TextFieldCurrentAmountDebt.setText(String.valueOf(sumDebt3));
+        TextFieldCurrentAmountDebt.setText(valueOf(sumDebt3));
 
         tabPane.getSelectionModel().select(TabMainScreen);
     }
@@ -480,7 +483,7 @@ public class Controller {
 
         currentAmountMoneyInt = sum2;
 
-        currentAmount = String.valueOf(currentAmountMoneyInt);
+        currentAmount = valueOf(currentAmountMoneyInt);
 
         TextFieldCurrentAmountMoney.setText(currentAmount);
 
@@ -488,7 +491,7 @@ public class Controller {
 
         sumDebt2 = debt + 40000;
 
-        TextFieldCurrentAmountDebt.setText(String.valueOf(sumDebt2));
+        TextFieldCurrentAmountDebt.setText(valueOf(sumDebt2));
 
         tabPane.getSelectionModel().select(TabMainScreen);
     }
@@ -547,18 +550,18 @@ public class Controller {
 
         randomIndexLeft = (int) (Math.random() * 25);
         ImageViewNewPropertiesLeft.setImage(houses.get(randomIndexLeft).getHouseImage());
-        NewPropertyLeftPrice.setText(String.valueOf(houses.get(randomIndexLeft).getPrice()));
+        NewPropertyLeftPrice.setText(valueOf(houses.get(randomIndexLeft).getPrice()));
         TextFieldNewPropertiesNameLeft.setText(houses.get(randomIndexLeft).getName());
 
         randomIndexMiddle = (int) (Math.random() * 25);
         ImageViewNewPropertiesMiddle.setImage(houses.get(randomIndexMiddle).getHouseImage());
-        NewPropertyMiddlePrice.setText(String.valueOf(houses.get(randomIndexMiddle).getPrice()));
-        TextFieldNewPropertiesNameMiddle.setText(String.valueOf(houses.get(randomIndexMiddle).getName()));
+        NewPropertyMiddlePrice.setText(valueOf(houses.get(randomIndexMiddle).getPrice()));
+        TextFieldNewPropertiesNameMiddle.setText(valueOf(houses.get(randomIndexMiddle).getName()));
 
         randomIndexRight = (int) (Math.random() * 25);
         ImageViewNewPropertiesRight.setImage(houses.get(randomIndexRight).getHouseImage());
-        NewPropertyRightPrice.setText(String.valueOf(houses.get(randomIndexRight).getPrice()));
-        TextFieldNewPropertiesNameRight.setText(String.valueOf(houses.get(randomIndexRight).getName()));
+        NewPropertyRightPrice.setText(valueOf(houses.get(randomIndexRight).getPrice()));
+        TextFieldNewPropertiesNameRight.setText(valueOf(houses.get(randomIndexRight).getName()));
 
 
     }
@@ -598,7 +601,22 @@ public class Controller {
     }
 
     @FXML
-    void LoadExistingData(ActionEvent event) {
+    void LoadExistingData(ActionEvent event) throws FileNotFoundException {
+
+        FileHandling fileHandling = new FileHandling();
+        GameData gameData;
+        gameData = fileHandling.load();
+
+        TextFieldDayCounter.setText(gameData.TextFieldDayCounter);
+        TextFieldName.setText(gameData.TextFieldName);
+        TextFieldAge.setText(gameData.TextFieldAge);
+        TextFieldCurrentAmountMoney.setText(gameData.TextFieldCurrentAmountMoney);
+        TextFieldCurrentAmountDebt.setText(gameData.TextFieldCurrentAmountDebt);
+
+       // ImageviewInvesterOfficeAvatar.setImage(Image.fromPlatformImage(gameData.ImageviewInvesterOfficeAvatar));
+       // TableListOfOwnedProperties.set
+
+        tabPane.getSelectionModel().select(TabMainScreen);
 
     }
 
@@ -613,7 +631,7 @@ public class Controller {
     }
 
     @FXML
-    void ButtonMainScreenEndDay(ActionEvent event) {
+    void ButtonMainScreenEndDay(ActionEvent event) throws IOException {
 
         // Updates which day it is
         TextFieldDayCounter.clear();
@@ -628,11 +646,11 @@ public class Controller {
         // Updates Property Market
         double randomHomeMarket = Math.random() * 20 - 10;
         randomHomeMarket = Math.round(randomHomeMarket);
-        TextFieldHomePropertiesMarket.setText(String.valueOf(randomHomeMarket));
+        TextFieldHomePropertiesMarket.setText(valueOf(randomHomeMarket));
 
         double randomOfficeMarket = Math.random() * 20 - 10;
         randomOfficeMarket = Math.round(randomOfficeMarket);
-        TextFieldOfficePropertiesMarket.setText(String.valueOf(randomOfficeMarket));
+        TextFieldOfficePropertiesMarket.setText(valueOf(randomOfficeMarket));
 
         //TODO multiply the values with the property prices to increase or decrease its value
 
@@ -670,10 +688,29 @@ public class Controller {
             double randomUpdate = Math.random() * 5;
             int updatedMarket = (int) ((int) randomUpdate + randomHomeMarket);
             int updatedOfficeMarket = (int) ((int) randomUpdate + randomOfficeMarket);
-            TextFieldHomePropertiesMarket.setText(String.valueOf(updatedMarket));
-            TextFieldOfficePropertiesMarket.setText((String.valueOf(updatedOfficeMarket)));
+            TextFieldHomePropertiesMarket.setText(valueOf(updatedMarket));
+            TextFieldOfficePropertiesMarket.setText((valueOf(updatedOfficeMarket)));
 
         } else TextAreaEventLog.appendText("hello");
+
+        GameData gameData = new GameData();
+
+        gameData.TextFieldDayCounter = TextFieldDayCounter.getText();
+        gameData.TextFieldName = TextFieldName.getText();
+        gameData.TextFieldCurrentAmountMoney = TextFieldCurrentAmountMoney.getText();
+        gameData.TextFieldCurrentAmountDebt = TextFieldCurrentAmountDebt.getText();
+        gameData.ImageviewInvesterOfficeAvatar = valueOf(ImageviewInvesterOfficeAvatar.getImage());
+        gameData.TableListOfOwnedProperties = valueOf(TableListOfOwnedProperties.getItems());
+
+        FileHandling fileHandling = new FileHandling();
+        fileHandling.save(gameData);
+
+
+
+
+
+
+
     }
 
 

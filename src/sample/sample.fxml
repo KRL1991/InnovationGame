@@ -129,7 +129,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="TextFieldAge" alignment="CENTER" editable="false" layoutX="956.0" layoutY="281.0" text="Age" />
+                  <TextField fx:id="TextFieldAge" alignment="CENTER" editable="false" layoutX="956.0" layoutY="281.0" />
                   <Label layoutX="1032.0" layoutY="384.0" prefHeight="33.0" prefWidth="35.0" text="Debt" textFill="WHITE" />
                   <Label layoutX="1026.0" layoutY="322.0" text="Money" textFill="WHITE" />
                </children>
