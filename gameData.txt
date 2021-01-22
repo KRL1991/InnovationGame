@@ -1,7 +1,7 @@
-Day: 6
-Harald
-null
-50000
+Day: 1
+Ole
+90
+-401000
 0
-javafx.scene.image.Image@71e8834b
-[sample.Properties@303447cb]
+javafx.scene.image.Image@3cc6724c
+[sample.Properties@11a8dbbd, sample.Properties@6c43c093, sample.Properties@16504b1d]

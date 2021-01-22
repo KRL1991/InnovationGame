@@ -177,6 +177,9 @@ public class Controller {
     private Button ButtonConvert;
 
     @FXML
+    private Button ButtonPayDebt;
+
+    @FXML
     private Button ButtonNewProperties;
 
     @FXML
@@ -327,6 +330,23 @@ public class Controller {
 
 // Methods
 
+    @FXML
+    void payDebt(ActionEvent event) {
+
+        int currentDebt = Integer.parseInt(TextFieldCurrentAmountDebt.getText());
+
+        int currentMoneyNew = currentAmountMoneyInt - currentDebt;
+
+        if (currentDebt==0){
+
+        }else{
+            TextFieldCurrentAmountMoney.setText(String.valueOf(currentMoneyNew));
+
+            TextFieldCurrentAmountDebt.setText("0");
+        }
+
+    }
+
 
     @FXML
     void BuyPropertiesLeft(ActionEvent event) {
@@ -335,23 +355,26 @@ public class Controller {
 
         int updatedAmountOfMoney = currentAmountMoneyInt - housePrice;
 
-        if (updatedAmountOfMoney > housePrice){
+        if (currentAmountMoneyInt < housePrice) {
             TextfieldNewPropertiesNotEnoughMoney.setText("You dont have enough money");
 
-        } else
+        } else {
 
             TextFieldCurrentAmountMoney.setText(valueOf(updatedAmountOfMoney));
 
-        currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
+            currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
 
-        ownedProperties.add(houses.get(randomIndexLeft));
+            ownedProperties.add(houses.get(randomIndexLeft));
 
 
-        TableListOfOwnedProperties.setItems(observableListOwnedProperties);
-        TableListOfOwnedProperties.refresh();
+            TableListOfOwnedProperties.setItems(observableListOwnedProperties);
+            TableListOfOwnedProperties.refresh();
 
-        tabPane.getSelectionModel().select(TabMainScreen);
+            TextfieldNewPropertiesNotEnoughMoney.clear();
 
+            tabPane.getSelectionModel().select(TabMainScreen);
+
+        }
     }
 
     @FXML
@@ -361,19 +384,29 @@ public class Controller {
 
         int updatedAmountOfMoney = currentAmountMoneyInt - housePrice;
 
-        TextFieldCurrentAmountMoney.setText(valueOf(updatedAmountOfMoney));
+        if (currentAmountMoneyInt < housePrice) {
+            TextfieldNewPropertiesNotEnoughMoney.setText("You dont have enough money");
 
-        currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
+        } else {
+
+            TextFieldCurrentAmountMoney.setText(valueOf(updatedAmountOfMoney));
+
+            currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
+
+            ownedProperties.add(houses.get(randomIndexMiddle));
 
 
-        ownedProperties.add(houses.get(randomIndexMiddle));
+            TableListOfOwnedProperties.setItems(observableListOwnedProperties);
+            TableListOfOwnedProperties.refresh();
 
-        TableListOfOwnedProperties.setItems(observableListOwnedProperties);
-        TableListOfOwnedProperties.refresh();
+            TextfieldNewPropertiesNotEnoughMoney.clear();
 
-        tabPane.getSelectionModel().select(TabMainScreen);
+            tabPane.getSelectionModel().select(TabMainScreen);
 
+        }
     }
+
+
 
     @FXML
     void BuyPropertiesRight(ActionEvent event) {
@@ -382,17 +415,28 @@ public class Controller {
 
         int updatedAmountOfMoney = currentAmountMoneyInt - housePrice;
 
-        TextFieldCurrentAmountMoney.setText(valueOf(updatedAmountOfMoney));
+        if (currentAmountMoneyInt < housePrice) {
+            TextfieldNewPropertiesNotEnoughMoney.setText("You dont have enough money");
 
-        currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
+        } else {
 
-        ownedProperties.add(houses.get(randomIndexRight));
+            TextFieldCurrentAmountMoney.setText(valueOf(updatedAmountOfMoney));
 
-        TableListOfOwnedProperties.setItems(observableListOwnedProperties);
-        TableListOfOwnedProperties.refresh();
+            currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
 
-        tabPane.getSelectionModel().select(TabMainScreen);
+            ownedProperties.add(houses.get(randomIndexRight));
+
+
+            TableListOfOwnedProperties.setItems(observableListOwnedProperties);
+            TableListOfOwnedProperties.refresh();
+
+            TextfieldNewPropertiesNotEnoughMoney.clear();
+
+            tabPane.getSelectionModel().select(TabMainScreen);
+
+        }
     }
+
 
     @FXML
     void ConvertBuilding(ActionEvent event) {
