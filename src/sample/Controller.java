@@ -272,6 +272,8 @@ public class Controller {
 
     @FXML
     private TextField TextFieldNewPropertiesNameRight;
+    @FXML
+    private TextField TextfieldNewPropertiesNotEnoughMoney;
 
 
     // TextArea -------------------------------------------------------------
@@ -333,7 +335,12 @@ public class Controller {
 
         int updatedAmountOfMoney = currentAmountMoneyInt - housePrice;
 
-        TextFieldCurrentAmountMoney.setText(valueOf(updatedAmountOfMoney));
+        if (updatedAmountOfMoney > housePrice){
+            TextfieldNewPropertiesNotEnoughMoney.setText("You dont have enough money");
+
+        } else
+
+            TextFieldCurrentAmountMoney.setText(valueOf(updatedAmountOfMoney));
 
         currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
 
@@ -697,6 +704,7 @@ public class Controller {
 
         gameData.TextFieldDayCounter = TextFieldDayCounter.getText();
         gameData.TextFieldName = TextFieldName.getText();
+        gameData.TextFieldAge = TextFieldAge.getText();
         gameData.TextFieldCurrentAmountMoney = TextFieldCurrentAmountMoney.getText();
         gameData.TextFieldCurrentAmountDebt = TextFieldCurrentAmountDebt.getText();
         gameData.ImageviewInvesterOfficeAvatar = valueOf(ImageviewInvesterOfficeAvatar.getImage());
