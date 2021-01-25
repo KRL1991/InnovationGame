@@ -1,9 +1,6 @@
 package sample;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.Scanner;
 
 public class FileHandling {
@@ -12,14 +9,15 @@ public class FileHandling {
         File file = new File("gameData.txt");
         PrintWriter output = new PrintWriter(file);
 
+
         output.println(gameData.TextFieldDayCounter);
         output.println(gameData.TextFieldName);
         output.println(gameData.TextFieldAge);
         output.println(gameData.TextFieldCurrentAmountMoney);
         output.println(gameData.TextFieldCurrentAmountDebt);
 
-        output.println(gameData.ImageviewInvesterOfficeAvatar);
-        output.println(gameData.TableListOfOwnedProperties);
+        output.write(gameData.ImageviewInvesterOfficeAvatar);
+        output.write(gameData.TableListOfOwnedProperties);
 
         output.close();
 

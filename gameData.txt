@@ -1,7 +1,6 @@
-Day: 7
+Day: 9
 Bob
-
-100000
+25
+32750
 0
-javafx.scene.image.Image@7634c7e8
-[]
+javafx.scene.image.Image@3f656a19[sample.Properties@28b262fa, sample.Properties@2f89bdb5]
