@@ -337,16 +337,20 @@ public class Controller {
 
         int currentMoneyNew = currentAmountMoneyInt - currentDebt;
 
-        if (currentDebt==0){
+        currentAmountMoneyInt = currentMoneyNew;
 
-        }else{
+        if (currentDebt == 0) {
+            TextAreaEventLog.appendText("\nYour debt is currently 0");
+
+        } else if (currentDebt > currentAmountMoneyInt) {
+            TextAreaEventLog.appendText("\nYou dont have enough money to pay off your debt");
+
+        } else {
             TextFieldCurrentAmountMoney.setText(String.valueOf(currentMoneyNew));
 
             TextFieldCurrentAmountDebt.setText("0");
         }
-
     }
-
 
     @FXML
     void BuyPropertiesLeft(ActionEvent event) {
@@ -626,16 +630,16 @@ public class Controller {
     @FXML
     void GoToMainScreen(ActionEvent event) {
         tabPane.getSelectionModel().select(TabMainScreen);
-
+/*
         String name = TextFieldCreateName.getText();
         String age = TextFieldEnterAge.getText();
 
-        TextFieldName.clear();
+        //TextFieldName.clear();
         TextFieldName.setText(name);
 
-        TextFieldAge.clear();
+       // TextFieldAge.clear();
         TextFieldAge.setText(age);
-
+    */
     }
 
     @FXML
