@@ -1,7 +1,7 @@
-Day: 7
-Bob
+Day: 2
 
+
+200000
 100000
-0
-javafx.scene.image.Image@7634c7e8
+javafx.scene.image.Image@6e3c6602
 []

@@ -682,7 +682,8 @@ public class Controller {
 
     @FXML
     void SellProperty(ActionEvent event) {
-
+        TableListOfOwnedProperties.getItems().remove(TableListOfOwnedProperties.getSelectionModel().getSelectedItem());
+        System.out.println(houses.size());
     }
 
     @FXML
