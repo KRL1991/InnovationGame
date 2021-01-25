@@ -691,6 +691,13 @@ public class Controller {
 
     @FXML
     void SellProperty(ActionEvent event) {
+
+
+
+   // int newTablePrice = Integer.parseInt(tablePrice.getText());
+    int currentMarketPrice = Integer.parseInt(TextFieldHomePropertiesMarket.getText());
+  //  int newTotal = currentAmountMoneyInt + newTablePrice  + (currentMarketPrice * 1000);
+    //currentAmountMoneyInt = newTotal;
         TableListOfOwnedProperties.getItems().remove(TableListOfOwnedProperties.getSelectionModel().getSelectedItem());
         System.out.println(houses.size());
     }

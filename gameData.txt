@@ -1,7 +1,6 @@
 Day: 2
 
 
-200000
-100000
-javafx.scene.image.Image@6e3c6602
-[]
+7650000
+0
+javafx.scene.image.Image@a453ed1[]

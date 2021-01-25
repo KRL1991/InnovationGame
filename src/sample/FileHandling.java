@@ -35,8 +35,8 @@ public class FileHandling {
         gameData.TextFieldCurrentAmountMoney = input.nextLine();
         gameData.TextFieldCurrentAmountDebt = input.nextLine();
 
-        gameData.ImageviewInvesterOfficeAvatar = input.nextLine();
-        gameData.TableListOfOwnedProperties = input.nextLine();
+        //gameData.ImageviewInvesterOfficeAvatar = input.nextLine();
+        //  gameData.TableListOfOwnedProperties = input.nextLine();
 
         return gameData;
     }
