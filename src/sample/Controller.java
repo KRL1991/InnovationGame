@@ -17,6 +17,7 @@ import javafx.scene.image.ImageView;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Scanner;
 
 import static java.lang.String.valueOf;
 
@@ -36,6 +37,10 @@ public class Controller {
     ObservableList<Properties> observableListOwnedProperties = FXCollections.observableList(ownedProperties);
     ObservableList<Properties> observableListHouses;
 
+    BufferedWriter output = new BufferedWriter(new FileWriter("tableData.txt",true));
+    BufferedWriter saveOutput;
+
+
     @FXML
     public TableView<Properties> TableListOfOwnedProperties;
 
@@ -44,6 +49,9 @@ public class Controller {
 
     @FXML
     public TableColumn<Properties, Integer> tablePrice;
+
+    public Controller() throws IOException {
+    }
 
     public void initialize() throws FileNotFoundException {
 
@@ -630,16 +638,15 @@ public class Controller {
     @FXML
     void GoToMainScreen(ActionEvent event) {
         tabPane.getSelectionModel().select(TabMainScreen);
-/*
+
         String name = TextFieldCreateName.getText();
         String age = TextFieldEnterAge.getText();
-
-        //TextFieldName.clear();
+        TextFieldName.clear();
         TextFieldName.setText(name);
 
-       // TextFieldAge.clear();
+        TextFieldAge.clear();
         TextFieldAge.setText(age);
-    */
+
     }
 
     @FXML
@@ -658,6 +665,8 @@ public class Controller {
     @FXML
     void LoadExistingData(ActionEvent event) throws FileNotFoundException {
 
+
+
         FileHandling fileHandling = new FileHandling();
         GameData gameData;
         gameData = fileHandling.load();
@@ -668,7 +677,7 @@ public class Controller {
         TextFieldCurrentAmountMoney.setText(gameData.TextFieldCurrentAmountMoney);
         TextFieldCurrentAmountDebt.setText(gameData.TextFieldCurrentAmountDebt);
 
-       // ImageviewInvesterOfficeAvatar.setImage(Image.fromPlatformImage(gameData.ImageviewInvesterOfficeAvatar));
+        // ImageviewInvesterOfficeAvatar.setImage(Image.fromPlatformImage(gameData.ImageviewInvesterOfficeAvatar));
        // TableListOfOwnedProperties.set
 
         tabPane.getSelectionModel().select(TabMainScreen);
@@ -684,6 +693,12 @@ public class Controller {
     void SellProperty(ActionEvent event) {
         TableListOfOwnedProperties.getItems().remove(TableListOfOwnedProperties.getSelectionModel().getSelectedItem());
         System.out.println(houses.size());
+    }
+
+    public void saveMethod () throws IOException {
+
+        saveOutput = new BufferedWriter(new FileWriter("tableData.txt"));
+
     }
 
     @FXML
@@ -761,6 +776,26 @@ public class Controller {
 
         FileHandling fileHandling = new FileHandling();
         fileHandling.save(gameData);
+
+        String tableItems = String.valueOf(TableListOfOwnedProperties.getItems());
+        saveMethod();
+
+
+        for (int i = 0; i < observableListOwnedProperties.size() ; i++) {
+
+            saveOutput.write(observableListOwnedProperties.get(i).name);
+            saveOutput.write(observableListOwnedProperties.get(i).price);
+            saveOutput.write("\n");
+        }
+
+
+
+        saveOutput.close();
+
+
+
+
+
 
 
 
