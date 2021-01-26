@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@HideTabs.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@HideTabs.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
   <tabs>
     <Tab fx:id="TabWelcomeScreen" text="Welcome Screen">
       <content>
@@ -84,7 +84,7 @@
                         <Image url="@../Logo/FemaleSymbol.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="ButtonStartInvesting" layoutX="511.0" layoutY="522.0" mnemonicParsing="false" onAction="#GoToMainScreen" prefHeight="30.0" prefWidth="180.0" text="Start Investing" />
+                  <Button fx:id="ButtonStartInvesting" layoutX="511.0" layoutY="522.0" mnemonicParsing="false" onAction="#nameAndAge" prefHeight="30.0" prefWidth="180.0" text="Start Investing" />
                </children>
             </AnchorPane>
         </content>
@@ -228,6 +228,7 @@
                         <Image url="@../Logo/money1.jpg" />
                      </image>
                   </ImageView>
+                  <TextField fx:id="TextFieldBankDeptTooHigh" alignment="CENTER" layoutX="35.0" layoutY="565.0" prefHeight="31.0" prefWidth="337.0" />
                </children></AnchorPane>
         </content>
       </Tab>

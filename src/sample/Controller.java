@@ -15,19 +15,20 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Scanner;
+import java.util.*;
 
 import static java.lang.String.valueOf;
 
 public class Controller {
     int currentAmountMoneyInt;
+    int currentAmountDebtInt;
+
     String currentAmount;
     int counter;
     int randomIndexLeft = 0;
     int randomIndexRight = 0;
     int randomIndexMiddle = 0;
+
 
 
     static ArrayList<Properties> houses = new ArrayList<>();
@@ -286,6 +287,9 @@ public class Controller {
     @FXML
     private TextField TextfieldNewPropertiesNotEnoughMoney;
 
+    @FXML
+    private TextField TextFieldBankDeptTooHigh;
+
 
     // TextArea -------------------------------------------------------------
     @FXML
@@ -497,6 +501,12 @@ public class Controller {
         int loan1 = 10000;
         int sum;
         int sumDebt;
+        currentAmountDebtInt = Integer.parseInt(TextFieldCurrentAmountDebt.getText());
+
+        if ( currentAmountDebtInt >= 100000) {
+            TextFieldBankDeptTooHigh.setText("Your Debt is too high to loan more money");
+
+        } else {
 
         currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
 
@@ -515,7 +525,10 @@ public class Controller {
         TextFieldCurrentAmountDebt.setText(valueOf(sumDebt));
 
         tabPane.getSelectionModel().select(TabMainScreen);
-    }
+        }
+}
+
+
 
     @FXML
     void BankLoanThree(ActionEvent event) {
@@ -523,24 +536,30 @@ public class Controller {
         int loan3 = 100000;
         int sum3;
         int sumDebt3;
+        currentAmountDebtInt = Integer.parseInt(TextFieldCurrentAmountDebt.getText());
 
-        currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
+        if (currentAmountDebtInt >= 100000) {
+            TextFieldBankDeptTooHigh.setText("Your Debt is too high to loan more money");
 
-        sum3 = currentAmountMoneyInt + loan3;
+        } else {
+            currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
 
-        currentAmountMoneyInt = sum3;
+            sum3 = currentAmountMoneyInt + loan3;
 
-        currentAmount = valueOf(currentAmountMoneyInt);
+            currentAmountMoneyInt = sum3;
 
-        TextFieldCurrentAmountMoney.setText(currentAmount);
+            currentAmount = valueOf(currentAmountMoneyInt);
 
-        int debt = Integer.parseInt(TextFieldCurrentAmountDebt.getText());
+            TextFieldCurrentAmountMoney.setText(currentAmount);
 
-        sumDebt3 = debt + 100000;
+            int debt = Integer.parseInt(TextFieldCurrentAmountDebt.getText());
 
-        TextFieldCurrentAmountDebt.setText(valueOf(sumDebt3));
+            sumDebt3 = debt + 100000;
 
-        tabPane.getSelectionModel().select(TabMainScreen);
+            TextFieldCurrentAmountDebt.setText(valueOf(sumDebt3));
+
+            tabPane.getSelectionModel().select(TabMainScreen);
+        }
     }
 
     @FXML
@@ -549,9 +568,16 @@ public class Controller {
         int loan2 = 40000;
         int sum2;
         int sumDebt2;
-        currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
 
-        sum2 = currentAmountMoneyInt + loan2;
+        // currentAmountMoneyInt = Integer.parseInt(TextFieldCurrentAmountMoney.getText());
+        currentAmountDebtInt = Integer.parseInt(TextFieldCurrentAmountDebt.getText());
+
+        if ( currentAmountDebtInt >= 100000) {
+            TextFieldBankDeptTooHigh.setText("Your Debt is too high to loan more money");
+
+        } else {
+
+            sum2 = currentAmountMoneyInt + loan2;
 
         currentAmountMoneyInt = sum2;
 
@@ -566,6 +592,8 @@ public class Controller {
         TextFieldCurrentAmountDebt.setText(valueOf(sumDebt2));
 
         tabPane.getSelectionModel().select(TabMainScreen);
+    }
+
     }
 
 // Difficulty Screen ----------------------------------------------------------
@@ -650,24 +678,45 @@ public class Controller {
     void GoToLeaderboard(ActionEvent event) {
         tabPane.getSelectionModel().select(TabLeaderboard);
 
+        ArrayList  Leaderboard = new ArrayList();
+
+        Leaderboard.add("Harald $" + 100000);
+        Leaderboard.add("Bjørn $" + 150000);
+        Leaderboard.add("Mike $" + 175000 );
+        Leaderboard.add("Emma $" + 180000);
+        Leaderboard.add("Peter $" + 195000 );
+        Leaderboard.add("Ella $" + 220000 );
+        Leaderboard.add("Bob $" + 250000 );
+        Leaderboard.add("Asmond $" + 275000);
+        Leaderboard.add("Mia $" + 500000);
+        Leaderboard.add(TextFieldName.getText() +" $" + currentAmountMoneyInt);
+
+     Collections.sort(Leaderboard);
+
+        ListViewLeaderboard.getItems().addAll(Leaderboard);
     }
 
     @FXML
     void GoToMainScreen(ActionEvent event) {
         tabPane.getSelectionModel().select(TabMainScreen);
 
-        String name = TextFieldCreateName.getText();
-        String age = TextFieldEnterAge.getText();
-        TextFieldName.clear();
-        TextFieldName.setText(name);
-
-        TextFieldAge.clear();
-        TextFieldAge.setText(age);
 
 
 
     }
+@FXML
+void nameAndAge (){
 
+        tabPane.getSelectionModel().select(TabMainScreen);
+
+    String name = TextFieldCreateName.getText();
+    String age = TextFieldEnterAge.getText();
+
+    TextFieldName.setText(name);
+
+    TextFieldAge.setText(age);
+
+}
     @FXML
     void GoToPropertyMarket(ActionEvent event) {
         tabPane.getSelectionModel().select(TabPropertyMarket);
@@ -749,6 +798,15 @@ public class Controller {
         randomOfficeMarket = Math.round(randomOfficeMarket);
         TextFieldOfficePropertiesMarket.setText(valueOf(randomOfficeMarket));
 
+        //Updates debt with a percentage increase
+
+        double debt = Double.parseDouble(TextFieldCurrentAmountDebt.getText());
+        double bankInterest = 0.10;
+
+        double updatedDebt = debt * bankInterest;
+
+        TextFieldCurrentAmountDebt.setText(String.valueOf((int)updatedDebt));
+
         //TODO multiply the values with the property prices to increase or decrease its value
 
 
@@ -792,7 +850,7 @@ public class Controller {
 
 
 
-
+       //Setting random houses in Invest in new Property on end day
         randomIndexLeft = (int) (Math.random() * 25);
         ImageViewNewPropertiesLeft.setImage(houses.get(randomIndexLeft).getHouseImage());
         NewPropertyLeftPrice.setText(valueOf(houses.get(randomIndexLeft).getPrice()));
