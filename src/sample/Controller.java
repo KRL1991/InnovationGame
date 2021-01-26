@@ -801,7 +801,7 @@ void nameAndAge (){
         //Updates debt with a percentage increase
 
         double debt = Double.parseDouble(TextFieldCurrentAmountDebt.getText());
-        double bankInterest = 0.10;
+        double bankInterest = 1.01;
 
         double updatedDebt = debt * bankInterest;
 
