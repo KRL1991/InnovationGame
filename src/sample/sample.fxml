@@ -74,14 +74,14 @@
                   </Label>
                   <Button fx:id="ButtonMale" layoutX="375.0" layoutY="350.0" mnemonicParsing="false" onAction="#CreateInvestorChooseGender" prefHeight="30.0" prefWidth="180.0" text="Male" />
                   <Button fx:id="ButtonFemale" layoutX="651.0" layoutY="350.0" mnemonicParsing="false" onAction="#CreateInvestorChooseGender" prefHeight="30.0" prefWidth="180.0" text="Female" />
-                  <ImageView fitHeight="80.0" fitWidth="100.0" layoutX="434.0" layoutY="397.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="434.0" layoutY="397.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Logo/Male.png" />
+                        <Image url="@../Logo/MaleSymbol.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="80.0" fitWidth="100.0" layoutX="704.0" layoutY="397.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="100.0" fitWidth="98.0" layoutX="704.0" layoutY="397.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Logo/Female.jpg" />
+                        <Image url="@../Logo/FemaleSymbol.png" />
                      </image>
                   </ImageView>
                   <Button fx:id="ButtonStartInvesting" layoutX="511.0" layoutY="522.0" mnemonicParsing="false" onAction="#GoToMainScreen" prefHeight="30.0" prefWidth="180.0" text="Start Investing" />
