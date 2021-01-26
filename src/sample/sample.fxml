@@ -23,14 +23,14 @@
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
-                  <Label layoutX="418.0" layoutY="311.0" text="Property Investor" textFill="WHITE">
+                  <Label layoutX="425.0" layoutY="311.0" text="Property Investor" textFill="WHITE">
                      <font>
                         <Font size="48.0" />
                      </font>
                   </Label>
-                  <Button fx:id="welcomeScreenStartButton" layoutX="557.0" layoutY="391.0" mnemonicParsing="false" onAction="#GoToDifficultyScreen" prefHeight="54.0" prefWidth="118.0" text="Start Game" />
-                  <Button fx:id="welcomeScreenLoadButton" layoutX="558.0" layoutY="470.0" mnemonicParsing="false" onAction="#LoadExistingData" prefHeight="54.0" prefWidth="118.0" text="Load Game" />
-                  <ImageView fx:id="ImageViewWelcomeScreenLogo" fitHeight="280.0" fitWidth="416.0" layoutX="408.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                  <Button fx:id="welcomeScreenStartButton" layoutX="525.0" layoutY="391.0" mnemonicParsing="false" onAction="#GoToDifficultyScreen" prefHeight="54.0" prefWidth="118.0" text="Start Game" />
+                  <Button fx:id="welcomeScreenLoadButton" layoutX="525.0" layoutY="470.0" mnemonicParsing="false" onAction="#LoadExistingData" prefHeight="54.0" prefWidth="118.0" text="Load Game" />
+                  <ImageView fx:id="ImageViewWelcomeScreenLogo" fitHeight="280.0" fitWidth="416.0" layoutX="375.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Logo/realestate-logo-portfolio-1.jpg" />
                      </image>
@@ -42,13 +42,13 @@
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
-                  <Button fx:id="DifficultyScreenEasyButton" layoutX="550.0" layoutY="155.0" mnemonicParsing="false" onAction="#GoToCreateInvestorEasy" prefHeight="30.0" prefWidth="100.0" text="Easy" />
-                  <Button fx:id="DifficultyScreenMediumButton" layoutX="550.0" layoutY="230.0" mnemonicParsing="false" onAction="#GoToCreateInvestorMedium" prefHeight="30.0" prefWidth="100.0" text="Medium" />
-                  <Button fx:id="DifficultyScreenHardButton" layoutX="550.0" layoutY="298.0" mnemonicParsing="false" onAction="#GoToCreateInvestorHard" prefHeight="30.0" prefWidth="100.0" text="Hard" />
-                  <Label layoutX="526.0" layoutY="195.0" text="Start Capital: 100.000 $" textFill="#f8f8f8" />
-                  <Label layoutX="530.0" layoutY="270.0" text="Start Capital: 75.000 $" textFill="#f2eded" />
-                  <Label layoutX="530.0" layoutY="339.0" text="Start Capital 50.000 $" textFill="WHITE" />
-                  <Label layoutX="423.0" layoutY="57.0" text="Choose Difficulty" textFill="WHITE">
+                  <Button fx:id="DifficultyScreenEasyButton" layoutX="525.0" layoutY="155.0" mnemonicParsing="false" onAction="#GoToCreateInvestorEasy" prefHeight="30.0" prefWidth="100.0" text="Easy" />
+                  <Button fx:id="DifficultyScreenMediumButton" layoutX="525.0" layoutY="230.0" mnemonicParsing="false" onAction="#GoToCreateInvestorMedium" prefHeight="30.0" prefWidth="100.0" text="Medium" />
+                  <Button fx:id="DifficultyScreenHardButton" layoutX="525.0" layoutY="298.0" mnemonicParsing="false" onAction="#GoToCreateInvestorHard" prefHeight="30.0" prefWidth="100.0" text="Hard" />
+                  <Label layoutX="510.0" layoutY="195.0" text="Start Capital: 100.000 $" textFill="#f8f8f8" />
+                  <Label layoutX="510.0" layoutY="270.0" text="Start Capital: 75.000 $" textFill="#f2eded" />
+                  <Label layoutX="510.0" layoutY="339.0" text="Start Capital: 50.000 $" textFill="WHITE" />
+                  <Label layoutX="415.0" layoutY="66.0" text="Choose Difficulty" textFill="WHITE">
                      <font>
                         <Font size="48.0" />
                      </font>
@@ -60,14 +60,14 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
-                  <Label layoutX="402.0" layoutY="66.0" text="Create Investor" textFill="WHITE">
+                  <Label layoutX="450.0" layoutY="66.0" text="Create Investor" textFill="WHITE">
                      <font>
                         <Font name="Consolas" size="48.0" />
                      </font>
                   </Label>
                   <TextField fx:id="TextFieldCreateName" alignment="CENTER" layoutX="501.0" layoutY="164.0" prefHeight="35.0" prefWidth="199.0" promptText="Enter Name..." />
                   <TextField fx:id="TextFieldEnterAge" alignment="CENTER" layoutX="501.0" layoutY="254.0" prefHeight="35.0" prefWidth="199.0" promptText=" Enter Age..." />
-                  <Label layoutX="524.0" layoutY="313.0" text="Choose Gender:" textFill="WHITE">
+                  <Label layoutX="540.0" layoutY="313.0" text="Choose Gender:" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -93,7 +93,7 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
-                  <ImageView fx:id="ImageviewInvesterOfficeAvatar" fitHeight="150.0" fitWidth="200.0" layoutX="974.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="ImageviewInvesterOfficeAvatar" fitHeight="150.0" fitWidth="200.0" layoutX="960.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Logo/businessMan.png" />
                      </image>
@@ -105,13 +105,13 @@
                         <Font size="48.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="TextFieldDayCounter" editable="false" layoutX="44.0" layoutY="59.0" text="Day: X" />
+                  <TextField fx:id="TextFieldDayCounter" editable="false" layoutX="56.0" layoutY="56.0" text="Day: X" />
                   <Button fx:id="ButtonEndDay" layoutX="508.0" layoutY="609.0" mnemonicParsing="false" onAction="#ButtonMainScreenEndDay" prefHeight="30.0" prefWidth="180.0" text="End Day" />
-                  <Button fx:id="ButtonInvestInNewProperty" layoutX="44.0" layoutY="240.0" mnemonicParsing="false" onAction="#GoToInvestInNewProperty" prefHeight="30.0" prefWidth="180.0" text="Invest In New Property" />
-                  <Button fx:id="ButtonViewOwnedProperties" layoutX="44.0" layoutY="297.0" mnemonicParsing="false" onAction="#GoToViewOwnedProperties" prefHeight="30.0" prefWidth="180.0" text="View Owned Properties " />
-                  <Button fx:id="ButtonBank" layoutX="44.0" layoutY="353.0" mnemonicParsing="false" onAction="#GoToBank" prefHeight="30.0" prefWidth="180.0" text="The Bank" />
-                  <Button fx:id="ButtonLeaderboard" layoutX="44.0" layoutY="609.0" mnemonicParsing="false" onAction="#GoToLeaderboard" prefHeight="30.0" prefWidth="180.0" text="Leaderboard" />
-                  <Button fx:id="ButtonPropertyMarket" layoutX="44.0" layoutY="417.0" mnemonicParsing="false" onAction="#GoToPropertyMarket" prefHeight="30.0" prefWidth="180.0" text="Property Market" />
+                  <Button fx:id="ButtonInvestInNewProperty" layoutX="45.0" layoutY="200.0" mnemonicParsing="false" onAction="#GoToInvestInNewProperty" prefHeight="30.0" prefWidth="180.0" text="Invest In New Property" />
+                  <Button fx:id="ButtonViewOwnedProperties" layoutX="45.0" layoutY="250.0" mnemonicParsing="false" onAction="#GoToViewOwnedProperties" prefHeight="30.0" prefWidth="180.0" text="View Owned Properties " />
+                  <Button fx:id="ButtonBank" layoutX="45.0" layoutY="300.0" mnemonicParsing="false" onAction="#GoToBank" prefHeight="30.0" prefWidth="180.0" text="The Bank" />
+                  <Button fx:id="ButtonLeaderboard" layoutX="45.0" layoutY="400.0" mnemonicParsing="false" onAction="#GoToLeaderboard" prefHeight="30.0" prefWidth="180.0" text="Leaderboard" />
+                  <Button fx:id="ButtonPropertyMarket" layoutX="45.0" layoutY="350.0" mnemonicParsing="false" onAction="#GoToPropertyMarket" prefHeight="30.0" prefWidth="180.0" text="Property Market" />
                   <TextField fx:id="TextFieldHomePropertiesMarket" alignment="CENTER" editable="false" layoutX="388.0" layoutY="265.0" text=" - 3" />
                   <TextField fx:id="TextFieldOfficePropertiesMarket" alignment="CENTER" editable="false" layoutX="614.0" layoutY="265.0" text="+5" />
                   <Label layoutX="377.0" layoutY="215.0" text="Home Properties Market" textFill="WHITE">
@@ -124,15 +124,15 @@
                      </font></Label>
                   <TextField fx:id="TextFieldCurrentAmountDebt" alignment="CENTER" editable="false" layoutX="956.0" layoutY="413.0" />
                   <TextArea fx:id="TextAreaEventLog" layoutX="743.0" layoutY="540.0" prefHeight="200.0" prefWidth="427.0" />
-                  <Label layoutX="919.0" layoutY="506.0" text="EventLog" textFill="WHITE">
+                  <Label layoutX="919.0" layoutY="506.0" text="Event log" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="TextFieldAge" alignment="CENTER" editable="false" layoutX="956.0" layoutY="281.0" />
-                  <Label layoutX="1032.0" layoutY="384.0" prefHeight="33.0" prefWidth="35.0" text="Debt" textFill="WHITE" />
-                  <Label layoutX="1026.0" layoutY="322.0" text="Money" textFill="WHITE" />
-                  <Button fx:id="ButtonPayDebt" layoutX="1009.0" layoutY="456.0" mnemonicParsing="false" onAction="#payDebt" text="Pay debt" />
+                  <TextField fx:id="TextFieldAge" alignment="CENTER" editable="false" layoutX="956.0" layoutY="290.0" />
+                  <Label layoutX="1018.0" layoutY="389.0" prefHeight="33.0" prefWidth="35.0" text="Debt" textFill="WHITE" />
+                  <Label layoutX="1017.0" layoutY="331.0" text="Money" textFill="WHITE" />
+                  <Button fx:id="ButtonPayDebt" layoutX="1003.0" layoutY="456.0" mnemonicParsing="false" onAction="#payDebt" text="Pay debt" />
                </children>
             </AnchorPane>
         </content>
@@ -142,7 +142,7 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
                   <Button fx:id="ButtonNewProperties" layoutX="995.0" layoutY="686.0" mnemonicParsing="false" onAction="#GoToMainScreen" prefHeight="30.0" prefWidth="180.0" text="Back" />
-                  <ImageView fx:id="ImageViewNewPropertiesLeft" fitHeight="200.0" fitWidth="300.0" layoutX="70.0" layoutY="93.0" pickOnBounds="true">
+                  <ImageView fx:id="ImageViewNewPropertiesLeft" fitHeight="200.0" fitWidth="300.0" layoutX="70.0" layoutY="190.0" pickOnBounds="true">
                      <image>
                         <Image url="@../Logo/realestate-logo-portfolio-1.jpg" />
                      </image>
@@ -152,25 +152,25 @@
                         <Image url="@../Logo/realestate-logo-portfolio-1.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="ImageViewNewPropertiesRight" fitHeight="200.0" fitWidth="300.0" layoutX="785.0" layoutY="93.0" pickOnBounds="true">
+                  <ImageView fx:id="ImageViewNewPropertiesRight" fitHeight="200.0" fitWidth="300.0" layoutX="785.0" layoutY="190.0" pickOnBounds="true">
                      <image>
                         <Image url="@../Logo/realestate-logo-portfolio-1.jpg" />
                      </image>
                   </ImageView>
-                  <Button fx:id="ButtonBuyLeft" layoutX="198.0" layoutY="385.0" mnemonicParsing="false" onAction="#BuyPropertiesLeft" text="Buy" />
+                  <Button fx:id="ButtonBuyLeft" layoutX="205.0" layoutY="485.0" mnemonicParsing="false" onAction="#BuyPropertiesLeft" text="Buy" />
                   <Button fx:id="ButtonBuyMiddle" layoutX="578.0" layoutY="616.0" mnemonicParsing="false" onAction="#BuyPropertiesMiddle" text="Buy" />
-                  <Button fx:id="ButtonBuyRight" layoutX="913.0" layoutY="394.0" mnemonicParsing="false" onAction="#BuyPropertiesRight" text="Buy" />
-                  <TextField fx:id="NewPropertyLeftPrice" alignment="CENTER" editable="false" layoutX="127.0" layoutY="350.0" text="\$" />
+                  <Button fx:id="ButtonBuyRight" layoutX="913.0" layoutY="485.0" mnemonicParsing="false" onAction="#BuyPropertiesRight" text="Buy" />
+                  <TextField fx:id="NewPropertyLeftPrice" alignment="CENTER" editable="false" layoutX="145.0" layoutY="450.0" text="\$" />
                   <TextField fx:id="NewPropertyMiddlePrice" alignment="CENTER" editable="false" layoutX="507.0" layoutY="576.0" text="\$" />
-                  <TextField fx:id="NewPropertyRightPrice" alignment="CENTER" editable="false" layoutX="842.0" layoutY="354.0" text="\$" />
-                  <Label layoutX="416.0" layoutY="58.0" text="New Properties" textFill="WHITE">
+                  <TextField fx:id="NewPropertyRightPrice" alignment="CENTER" editable="false" layoutX="842.0" layoutY="450.0" text="\$" />
+                  <Label layoutX="416.0" layoutY="66.0" text="New Properties" textFill="WHITE">
                      <font>
                         <Font size="48.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="TextFieldNewPropertiesNameLeft" alignment="CENTER" editable="false" layoutX="127.0" layoutY="311.0" />
+                  <TextField fx:id="TextFieldNewPropertiesNameLeft" alignment="CENTER" editable="false" layoutX="145.0" layoutY="410.0" />
                   <TextField fx:id="TextFieldNewPropertiesNameMiddle" alignment="CENTER" editable="false" layoutX="507.0" layoutY="534.0" />
-                  <TextField fx:id="TextFieldNewPropertiesNameRight" alignment="CENTER" editable="false" layoutX="842.0" layoutY="311.0" />
+                  <TextField fx:id="TextFieldNewPropertiesNameRight" alignment="CENTER" editable="false" layoutX="842.0" layoutY="410.0" />
                   <TextField fx:id="TextfieldNewPropertiesNotEnoughMoney" alignment="CENTER" editable="false" layoutX="118.0" layoutY="576.0" prefHeight="63.0" prefWidth="206.0" />
                </children></AnchorPane>
         </content>
