@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@HideTabs.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@HideTabs.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
   <tabs>
     <Tab fx:id="TabWelcomeScreen" text="Welcome Screen">
       <content>
@@ -218,6 +218,16 @@
                   <Label layoutX="590.0" layoutY="335.0" text="Loan 2" textFill="WHITE" />
                   <Label layoutX="590.0" layoutY="525.0" text="Loan 3" textFill="WHITE" />
                   <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="103.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="301.0" fitWidth="270.0" layoutX="45.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Logo/bank3.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="226.0" fitWidth="207.0" layoutX="945.0" layoutY="391.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Logo/money1.jpg" />
+                     </image>
+                  </ImageView>
                </children></AnchorPane>
         </content>
       </Tab>
