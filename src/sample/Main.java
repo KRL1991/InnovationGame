@@ -19,6 +19,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Property Investor");
         primaryStage.setScene(new Scene(root, 1200, 800));
+        primaryStage.setResizable(false);
         primaryStage.show();
 
 
