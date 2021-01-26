@@ -23,14 +23,14 @@
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
-                  <Label layoutX="425.0" layoutY="311.0" text="Property Investor" textFill="WHITE">
+                  <Label layoutX="402.0" layoutY="304.0" text="Property Investor" textFill="WHITE">
                      <font>
                         <Font size="48.0" />
                      </font>
                   </Label>
-                  <Button fx:id="welcomeScreenStartButton" layoutX="525.0" layoutY="391.0" mnemonicParsing="false" onAction="#GoToDifficultyScreen" prefHeight="54.0" prefWidth="118.0" text="Start Game" />
+                  <Button fx:id="welcomeScreenStartButton" layoutX="525.0" layoutY="389.0" mnemonicParsing="false" onAction="#GoToDifficultyScreen" prefHeight="54.0" prefWidth="118.0" text="Start Game" />
                   <Button fx:id="welcomeScreenLoadButton" layoutX="525.0" layoutY="470.0" mnemonicParsing="false" onAction="#LoadExistingData" prefHeight="54.0" prefWidth="118.0" text="Load Game" />
-                  <ImageView fx:id="ImageViewWelcomeScreenLogo" fitHeight="280.0" fitWidth="416.0" layoutX="375.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="ImageViewWelcomeScreenLogo" fitHeight="280.0" fitWidth="416.0" layoutX="376.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Logo/realestate-logo-portfolio-1.jpg" />
                      </image>
@@ -42,12 +42,17 @@
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
-                  <Button fx:id="DifficultyScreenEasyButton" layoutX="525.0" layoutY="155.0" mnemonicParsing="false" onAction="#GoToCreateInvestorEasy" prefHeight="30.0" prefWidth="100.0" text="Easy" />
-                  <Button fx:id="DifficultyScreenMediumButton" layoutX="525.0" layoutY="230.0" mnemonicParsing="false" onAction="#GoToCreateInvestorMedium" prefHeight="30.0" prefWidth="100.0" text="Medium" />
-                  <Button fx:id="DifficultyScreenHardButton" layoutX="525.0" layoutY="298.0" mnemonicParsing="false" onAction="#GoToCreateInvestorHard" prefHeight="30.0" prefWidth="100.0" text="Hard" />
-                  <Label layoutX="510.0" layoutY="195.0" text="Start Capital: 100.000 $" textFill="#f8f8f8" />
-                  <Label layoutX="510.0" layoutY="270.0" text="Start Capital: 75.000 $" textFill="#f2eded" />
-                  <Label layoutX="510.0" layoutY="339.0" text="Start Capital: 50.000 $" textFill="WHITE" />
+                  <Button fx:id="DifficultyScreenEasyButton" layoutX="193.0" layoutY="193.0" mnemonicParsing="false" onAction="#GoToCreateInvestorEasy" prefHeight="30.0" prefWidth="100.0" text="Easy" AnchorPane.leftAnchor="193.0" AnchorPane.rightAnchor="907.0" />
+                  <Button fx:id="DifficultyScreenMediumButton" layoutX="550.0" layoutY="193.0" mnemonicParsing="false" onAction="#GoToCreateInvestorMedium" prefHeight="30.0" prefWidth="100.0" text="Medium" AnchorPane.leftAnchor="550.0" AnchorPane.rightAnchor="550.0" />
+                  <Button fx:id="DifficultyScreenHardButton" layoutX="968.0" layoutY="193.0" mnemonicParsing="false" onAction="#GoToCreateInvestorHard" prefHeight="30.0" prefWidth="100.0" text="Hard" AnchorPane.leftAnchor="907.0" AnchorPane.rightAnchor="193.0" />
+                  <ImageView fx:id="ImageDifficultyScreen" fitHeight="363.0" fitWidth="708.0" layoutX="278.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                     <image>
+                        <Image url="@../Logo/diff.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="183.0" layoutY="238.0" text="Start Capital: 100.000 $" textFill="#f8f8f8" />
+                  <Label layoutX="541.0" layoutY="238.0" text="Start Capital: 75.000 $" textFill="#f2eded" />
+                  <Label layoutX="897.0" layoutY="238.0" text="Start Capital: 50.000 $" textFill="WHITE" />
                   <Label layoutX="415.0" layoutY="66.0" text="Choose Difficulty" textFill="WHITE">
                      <font>
                         <Font size="48.0" />
@@ -60,7 +65,7 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #073E53;">
                <children>
-                  <Label layoutX="450.0" layoutY="66.0" text="Create Investor" textFill="WHITE">
+                  <Label layoutX="406.0" layoutY="66.0" text="Create Investor" textFill="WHITE">
                      <font>
                         <Font name="Consolas" size="48.0" />
                      </font>
@@ -252,7 +257,7 @@
                         <NumberAxis side="LEFT" />
                      </yAxis>
                   </LineChart>
-                  <Button fx:id="ButtonPropertyMarketBack" layoutX="1073.0" layoutY="697.0" mnemonicParsing="false" onAction="#GoToMainScreen" text="Back" />
+                  <Button fx:id="ButtonPropertyMarketBack" layoutX="900.0" layoutY="700.0" mnemonicParsing="false" onAction="#GoToMainScreen" prefHeight="30.0" prefWidth="180.0" text="Back" />
                </children></AnchorPane>
         </content>
       </Tab>

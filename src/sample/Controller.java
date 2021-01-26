@@ -229,6 +229,10 @@ public class Controller {
     @FXML
     public ImageView ImageviewInvesterOfficeAvatar;
 
+    @FXML
+    private ImageView ImageDifficultyScreen;
+
+
     // Textfields -------------------------------------------------------------
 
     @FXML
@@ -639,6 +643,8 @@ public class Controller {
     @FXML
     void GoToDifficultyScreen(ActionEvent event) {
         tabPane.getSelectionModel().select(TabDifficultyScreen);
+        Image image = new Image("/Logo/diff.jpg");
+        ImageDifficultyScreen.setImage(image);
 
     }
 // .....
@@ -806,6 +812,14 @@ void nameAndAge (){
         double updatedDebt = debt * bankInterest;
 
         TextFieldCurrentAmountDebt.setText(String.valueOf((int)updatedDebt));
+
+
+        int income = (ownedProperties.size() * 1000) + currentAmountMoneyInt;
+
+        currentAmountMoneyInt = income;
+
+        TextFieldCurrentAmountMoney.setText(String.valueOf(income));
+
 
         //TODO multiply the values with the property prices to increase or decrease its value
 
