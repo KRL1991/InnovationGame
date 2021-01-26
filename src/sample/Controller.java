@@ -456,14 +456,23 @@ public class Controller {
     }
 
     @FXML
-    void CreateInvestorChooseGender(ActionEvent event) {
+    void CreateInvestorChooseFemale(ActionEvent event) {
 
-        String name = TextFieldCreateName.getText();
+        Image female = new Image("/Logo/businessWoman.png");
 
-        TextFieldName.clear();
-        TextFieldName.setText(name);
+        ImageviewInvesterOfficeAvatar.setImage(female);
 
     }
+
+    @FXML
+    void CreateInvestorChooseMale(ActionEvent event) {
+
+        Image male = new Image("/Logo/businessMan.png");
+
+        ImageviewInvesterOfficeAvatar.setImage(male);
+
+    }
+
 
     @FXML
     void GoToBank(ActionEvent event) {
@@ -611,20 +620,28 @@ public class Controller {
         tabPane.getSelectionModel().select(TabNewProperties);
 
 
-        randomIndexLeft = (int) (Math.random() * 25);
-        ImageViewNewPropertiesLeft.setImage(houses.get(randomIndexLeft).getHouseImage());
-        NewPropertyLeftPrice.setText(valueOf(houses.get(randomIndexLeft).getPrice()));
-        TextFieldNewPropertiesNameLeft.setText(houses.get(randomIndexLeft).getName());
+        if (counter == 0) {
 
-        randomIndexMiddle = (int) (Math.random() * 25);
-        ImageViewNewPropertiesMiddle.setImage(houses.get(randomIndexMiddle).getHouseImage());
-        NewPropertyMiddlePrice.setText(valueOf(houses.get(randomIndexMiddle).getPrice()));
-        TextFieldNewPropertiesNameMiddle.setText(valueOf(houses.get(randomIndexMiddle).getName()));
+            randomIndexLeft = 3;
+            ImageViewNewPropertiesLeft.setImage(houses.get(randomIndexLeft).getHouseImage());
+            NewPropertyLeftPrice.setText(valueOf(houses.get(randomIndexLeft).getPrice()));
+            TextFieldNewPropertiesNameLeft.setText(houses.get(randomIndexLeft).getName());
 
-        randomIndexRight = (int) (Math.random() * 25);
-        ImageViewNewPropertiesRight.setImage(houses.get(randomIndexRight).getHouseImage());
-        NewPropertyRightPrice.setText(valueOf(houses.get(randomIndexRight).getPrice()));
-        TextFieldNewPropertiesNameRight.setText(valueOf(houses.get(randomIndexRight).getName()));
+            randomIndexMiddle = 8;
+            ImageViewNewPropertiesMiddle.setImage(houses.get(randomIndexMiddle).getHouseImage());
+            NewPropertyMiddlePrice.setText(valueOf(houses.get(randomIndexMiddle).getPrice()));
+            TextFieldNewPropertiesNameMiddle.setText(valueOf(houses.get(randomIndexMiddle).getName()));
+
+            randomIndexRight = 19;
+            ImageViewNewPropertiesRight.setImage(houses.get(randomIndexRight).getHouseImage());
+            NewPropertyRightPrice.setText(valueOf(houses.get(randomIndexRight).getPrice()));
+            TextFieldNewPropertiesNameRight.setText(valueOf(houses.get(randomIndexRight).getName()));
+
+        }else{
+
+        }
+
+
 
 
     }
@@ -646,6 +663,8 @@ public class Controller {
 
         TextFieldAge.clear();
         TextFieldAge.setText(age);
+
+
 
     }
 
@@ -770,6 +789,25 @@ public class Controller {
             TextFieldOfficePropertiesMarket.setText((valueOf(updatedOfficeMarket)));
 
         } else TextAreaEventLog.appendText("hello");
+
+
+
+
+        randomIndexLeft = (int) (Math.random() * 25);
+        ImageViewNewPropertiesLeft.setImage(houses.get(randomIndexLeft).getHouseImage());
+        NewPropertyLeftPrice.setText(valueOf(houses.get(randomIndexLeft).getPrice()));
+        TextFieldNewPropertiesNameLeft.setText(houses.get(randomIndexLeft).getName());
+
+        randomIndexMiddle = (int) (Math.random() * 25);
+        ImageViewNewPropertiesMiddle.setImage(houses.get(randomIndexMiddle).getHouseImage());
+        NewPropertyMiddlePrice.setText(valueOf(houses.get(randomIndexMiddle).getPrice()));
+        TextFieldNewPropertiesNameMiddle.setText(valueOf(houses.get(randomIndexMiddle).getName()));
+
+        randomIndexRight = (int) (Math.random() * 25);
+        ImageViewNewPropertiesRight.setImage(houses.get(randomIndexRight).getHouseImage());
+        NewPropertyRightPrice.setText(valueOf(houses.get(randomIndexRight).getPrice()));
+        TextFieldNewPropertiesNameRight.setText(valueOf(houses.get(randomIndexRight).getName()));
+
 
         GameData gameData = new GameData();
 
