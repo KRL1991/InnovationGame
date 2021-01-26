@@ -152,25 +152,25 @@
                         <Image url="@../Logo/realestate-logo-portfolio-1.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="ImageViewNewPropertiesRight" fitHeight="200.0" fitWidth="300.0" layoutX="785.0" layoutY="190.0" pickOnBounds="true">
+                  <ImageView fx:id="ImageViewNewPropertiesRight" fitHeight="200.0" fitWidth="300.0" layoutX="830.0" layoutY="190.0" pickOnBounds="true">
                      <image>
                         <Image url="@../Logo/realestate-logo-portfolio-1.jpg" />
                      </image>
                   </ImageView>
                   <Button fx:id="ButtonBuyLeft" layoutX="205.0" layoutY="485.0" mnemonicParsing="false" onAction="#BuyPropertiesLeft" text="Buy" />
-                  <Button fx:id="ButtonBuyMiddle" layoutX="578.0" layoutY="616.0" mnemonicParsing="false" onAction="#BuyPropertiesMiddle" text="Buy" />
-                  <Button fx:id="ButtonBuyRight" layoutX="913.0" layoutY="485.0" mnemonicParsing="false" onAction="#BuyPropertiesRight" text="Buy" />
+                  <Button fx:id="ButtonBuyMiddle" layoutX="587.0" layoutY="611.0" mnemonicParsing="false" onAction="#BuyPropertiesMiddle" text="Buy" />
+                  <Button fx:id="ButtonBuyRight" layoutX="949.0" layoutY="485.0" mnemonicParsing="false" onAction="#BuyPropertiesRight" text="Buy" />
                   <TextField fx:id="NewPropertyLeftPrice" alignment="CENTER" editable="false" layoutX="145.0" layoutY="450.0" text="\$" />
-                  <TextField fx:id="NewPropertyMiddlePrice" alignment="CENTER" editable="false" layoutX="507.0" layoutY="576.0" text="\$" />
-                  <TextField fx:id="NewPropertyRightPrice" alignment="CENTER" editable="false" layoutX="842.0" layoutY="450.0" text="\$" />
+                  <TextField fx:id="NewPropertyMiddlePrice" alignment="CENTER" editable="false" layoutX="525.0" layoutY="576.0" text="\$" />
+                  <TextField fx:id="NewPropertyRightPrice" alignment="CENTER" editable="false" layoutX="890.0" layoutY="450.0" text="\$" />
                   <Label layoutX="416.0" layoutY="66.0" text="New Properties" textFill="WHITE">
                      <font>
                         <Font size="48.0" />
                      </font>
                   </Label>
                   <TextField fx:id="TextFieldNewPropertiesNameLeft" alignment="CENTER" editable="false" layoutX="145.0" layoutY="410.0" />
-                  <TextField fx:id="TextFieldNewPropertiesNameMiddle" alignment="CENTER" editable="false" layoutX="507.0" layoutY="534.0" />
-                  <TextField fx:id="TextFieldNewPropertiesNameRight" alignment="CENTER" editable="false" layoutX="842.0" layoutY="410.0" />
+                  <TextField fx:id="TextFieldNewPropertiesNameMiddle" alignment="CENTER" editable="false" layoutX="525.0" layoutY="534.0" />
+                  <TextField fx:id="TextFieldNewPropertiesNameRight" alignment="CENTER" editable="false" layoutX="890.0" layoutY="410.0" />
                   <TextField fx:id="TextfieldNewPropertiesNotEnoughMoney" alignment="CENTER" editable="false" layoutX="118.0" layoutY="576.0" prefHeight="63.0" prefWidth="206.0" />
                </children></AnchorPane>
         </content>
